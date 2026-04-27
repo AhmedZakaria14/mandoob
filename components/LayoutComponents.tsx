@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 
 export function Header() {
@@ -28,9 +29,11 @@ export function Header() {
 
           {/* Centered Logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
-            <img 
+            <Image 
               src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png" 
               alt="شعار زين 5G وألياف بصرية" 
+              width={200}
+              height={100}
               className="h-16 md:h-20 w-auto drop-shadow-md py-1" 
               loading="eager" 
             />
@@ -53,9 +56,11 @@ export function Header() {
             dir="rtl"
           >
             <div className="flex justify-between items-center mb-10 border-b border-gray-700 pb-4">
-              <img 
+              <Image 
                 src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png" 
                 alt="شعار زين" 
+                width={80}
+                height={40}
                 className="h-12 w-auto" 
               />
               <button 
@@ -135,11 +140,11 @@ export function Footer() {
         </div>
         
         <div>
-          <h4 className="text-lg font-bold mb-4 border-b-2 border-brand-light pb-2 inline-block">روابط سريعة</h4>
+          <h4 className="text-lg font-bold mb-4 border-b-2 border-brand-light pb-2 inline-block">الأقسام والمدونة</h4>
           <ul className="space-y-3">
             <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> الرئيسية</Link></li>
             <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> الخدمات</a></li>
-            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> عروض موظف التأسيس</Link></li>
+            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> استكشف مقالات المدونة</Link></li>
           </ul>
         </div>
         

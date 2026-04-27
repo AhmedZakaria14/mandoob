@@ -1,8 +1,10 @@
+import { packages } from '@/data/packages';
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { Slideshow } from '@/components/Slideshow';
 import { FAQSection } from '@/components/FAQ';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -121,25 +123,47 @@ export default function Home() {
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* Feature Box (Pricing) */}
-              <div className="bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] hover:bg-white p-10 transition-all duration-500 hover:scale-105 border-t-4 border-brand-primary text-center group relative z-10 border-x border-b border-gray-200 mx-auto w-full max-w-[400px] lg:col-start-2">
-                <div className="absolute top-4 -right-8 overflow-hidden bg-white text-brand-primary text-center -rotate-45 shadow-sm px-8 origin-center border border-gray-100 hidden">الأكثر طلباً</div>
-                <h3 className="font-medium text-xl text-brand-primary mb-4">باقة 5G لا محدود</h3>
-                <h4 className="text-brand-secondary mb-6 flex flex-row-reverse justify-center items-baseline">
-                  <span className="text-2xl pt-8 text-[#191b8a]">ريال/شهرياً</span>
-                  <span className="font-bold text-[90px] px-2 leading-none text-[#191b8a]">100</span>
-                </h4>
-                <ul className="text-right text-gray-500 space-y-0 mb-8 bg-gray-50 p-6 rounded-xl border border-gray-100/50">
-                  <li className="flex items-center gap-3 font-bold text-black border-b border-gray-200 pb-3 mb-3"><span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> إنترنت سريع جداً</li>
-                  <li className="flex items-center gap-3 font-bold text-black border-b border-gray-200 pb-3 mb-3"><span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> راوتر 5G مجاني</li>
-                  <li className="flex items-center gap-3 font-bold text-black border-b border-gray-200 pb-3 mb-3"><span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> تركيب وتأسيس مجاني</li>
-                  <li className="flex items-center gap-3 font-bold text-black pt-1"><span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> دعم فني 24/7</li>
-                </ul>
-                <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 rounded-full text-brand-primary font-bold border border-brand-light hover:bg-brand-primary hover:text-white transition-all shadow-sm w-full bg-white">
-                  أطلب الآن
-                </a>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {packages.map((pkg) => (
+                <div key={pkg.id} className={`bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] p-10 transition-all duration-500 hover:scale-105 border-t-4 text-center group relative z-10 border-x border-b mx-auto w-full max-w-[400px] ${pkg.isPopular ? 'border-brand-primary shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] border-gray-200 hover:bg-white' : 'border-gray-400 shadow-[7px_7px_0_0_#d1d5db] hover:shadow-[7px_7px_0_0_#9ca3af] border-gray-200 hover:bg-white'}`}>
+                  {pkg.isPopular && (
+                    <div className="absolute top-4 -right-8 overflow-hidden bg-brand-primary text-white text-center -rotate-45 shadow-sm px-8 py-1 origin-center border border-gray-100 font-bold block">
+                      الأكثر طلباً
+                    </div>
+                  )}
+                  <h3 className="font-bold text-2xl text-[#262626] mb-2">{pkg.title}</h3>
+                  <p className="text-gray-500 text-sm mb-6 min-h-[40px]">{pkg.subtitle}</p>
+                  
+                  <h4 className="text-brand-secondary mb-6 flex flex-row-reverse justify-center items-baseline border-b border-gray-200 pb-6">
+                    <span className="text-xl pt-8 text-[#191b8a]">{pkg.currency}/{pkg.period}</span>
+                    <span className="font-black text-[70px] px-2 leading-none text-[#191b8a]">{pkg.price}</span>
+                  </h4>
+                  
+                  <ul className="text-right text-gray-500 space-y-0 mb-8 bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative">
+                     <span className="absolute -top-3 right-4 bg-brand-light text-brand-primary font-bold px-2 py-0.5 rounded text-xs">أبرز المميزات</span>
+                    {pkg.highlights.map((hlt, idx) => (
+                      <li key={idx} className="flex items-center gap-3 font-bold text-black border-b border-gray-100 pb-3 mb-3 last:border-0 last:pb-0 last:mb-0">
+                        <span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> 
+                        {hlt}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <ul className="text-right text-sm text-gray-400 space-y-2 mb-8 px-2">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                         <span className="shrink-0 mt-0.5 text-xs text-brand-secondary">✦</span>
+                         <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className={`inline-block px-8 py-4 rounded-full font-bold transition-all shadow-sm w-full ${pkg.isPopular ? 'bg-brand-primary text-white hover:bg-brand-secondary' : 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-white'}`}>
+                    أطلب الآن
+                  </a>
+                  <p className="text-[10px] text-gray-400 mt-4 leading-tight">{pkg.terms_and_conditions}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -161,9 +185,11 @@ export default function Home() {
                 <Link key={post.id} href={`/blog/${post.slug}`} className="block">
                   <div className="relative bg-white overflow-hidden rounded-[10px] group transition-all duration-300 hover:shadow-[1px_1px_40px_rgba(0,0,0,0.12)] h-[300px] border border-gray-200">
                     <div className="h-[200px] overflow-hidden bg-black transition-all duration-500 group-hover:h-[123px] relative">
-                      <img 
-                        src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png" 
+                      <Image 
+                        src={post.imageUrl}
                         alt={post.title} 
+                        width={400}
+                        height={200}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-125 group-hover:opacity-75"
                         loading="lazy"
                       />

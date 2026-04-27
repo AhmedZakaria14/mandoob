@@ -3,6 +3,7 @@ import { Header, Footer } from '@/components/LayoutComponents';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Generate static parameters for all 26 blog posts
 export async function generateStaticParams() {
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       url: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
       images: [
         {
-          url: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png',
+          url: post.imageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -70,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "@type": "Article",
                 "headline": post.title,
                 "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
-                "image": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png`,
+                "image": post.imageUrl,
                 "author": {
                   "@type": "Organization",
                   "name": "موظف مبيعات زين"
@@ -204,10 +205,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             )}
 
             <div className="mt-12 text-center bg-gray-50 p-4 rounded-2xl border border-gray-100">
-               <img 
-                 src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png" 
+               <Image 
+                 src={post.imageUrl}
                  alt={`${post.title} - عروض انترنت زين المميزة`} 
                  className="mx-auto rounded-xl shadow-lg h-auto w-full object-cover max-h-[400px]" 
+                 width={800}
+                 height={400}
                  loading="lazy" 
                />
                <p className="text-sm text-gray-500 mt-4 font-bold">ملصق توضيحي لخدمة {post.title} من زين</p>
@@ -216,7 +219,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             <div className="mt-16 border-t border-gray-200 pt-10 text-center flex flex-col items-center">
                <h3 className="text-2xl font-bold mb-6 text-brand-secondary">هل تحتاج للمساعدة فوراً ومباشرة؟</h3>
                <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full shadow-md hover:shadow-xl transition-all p-2">
-                  <img src="/assets/img/callus2.png" alt="اتصل بنا الآن 0596620358" className="h-20 hover:scale-105 transition-transform" loading="lazy" />
+                  <Image src="/assets/img/callus2.png" alt="اتصل بنا الآن 0596620358" width={80} height={80} className="h-20 hover:scale-105 transition-transform" loading="lazy" />
                </a>
             </div>
           </div>
