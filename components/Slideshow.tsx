@@ -1,0 +1,52 @@
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+
+const homeImages = [
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png", alt: "مندوب شركة زين الرياض لتركيب وتأسيس 5G والألياف" },
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png", alt: "عروض وسرعات إنترنت زين 5G الهائلة للمنزل لتجربة ألعاب وبث بلا تقطيع" },
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/2_ivbo98.png", alt: "باقات زين المفتوحة واللامحدودة للإنترنت المنزلي والألياف البصرية المتطورة" },
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279053/3_d2uvsg.png", alt: "أفضل تغطية إنترنت منزلي من شركة زين في الرياض والمملكة كاملة" },
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279052/4_mve8v4.png", alt: "تأسيس وتركيب إنترنت 5G سريع ومجاني مع راوتر حديث" },
+  { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279050/5_l2sdhh.png", alt: "موظف مبيعات زين لخدمات الإنترنت المنزلي ورفع طلبات التأسيس فوراً" }
+];
+
+export function Slideshow() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % homeImages.length);
+    }, 4500); // 4.5 seconds delay
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative w-full h-[400px] sm:aspect-[16/9] md:h-[500px] overflow-hidden rounded-2xl shadow-2xl border border-white flex items-center justify-center bg-gray-50/50">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={homeImages[currentIndex].src}
+          alt={homeImages[currentIndex].alt}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </AnimatePresence>
+      
+      {/* Pagination indicators */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-10 p-2 bg-black/40 rounded-full backdrop-blur-sm">
+        {homeImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`w-3 h-3 rounded-full transition-colors duration-300 ${idx === currentIndex ? 'bg-brand-primary w-6' : 'bg-white/60 hover:bg-white'}`}
+            aria-label={`عرض الصورة رقم ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
