@@ -168,45 +168,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Blog Posts Grid System (.gambar style) */}
-        <section id="coverage" className="py-20 bg-white">
+        {/* Blog Posts Section */}
+        <section id="coverage" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center pb-12">
-              <h2 className="text-3xl font-bold text-brand-primary uppercase mb-5 relative inline-block pb-5">
-                التغطية والمناطق
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-[3px] bg-brand-primary"></span>
-                <span className="absolute bottom-[1px] left-1/2 -translate-x-1/2 w-[120px] h-[1px] bg-gray-300"></span>
+              <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#333]">
+                تغطية أحياء الرياض
+                <span className="block w-1/2 h-1 bg-brand-primary mx-auto mt-2"></span>
               </h2>
-              <p className="text-gray-500 text-lg">اختر منطقتك للتعرف على أحدث عروض زين وتدفق الفنيين لدينا.</p>
+              <p className="text-gray-500 text-lg">أحدث المقالات والتغطيات في بمناطق الرياض المختلفة.</p>
             </div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1470px] mx-auto">
+            {/* Mobile: Horizontal Scroll (CSS Snap), Desktop: Grid */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hide-scrollbar">
               {blogPosts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.slug}`} className="block">
-                  <div className="relative bg-white overflow-hidden rounded-[10px] group transition-all duration-300 hover:shadow-[1px_1px_40px_rgba(0,0,0,0.12)] h-[300px] border border-gray-200">
-                    <div className="h-[200px] overflow-hidden bg-black transition-all duration-500 group-hover:h-[123px] relative">
-                      <Image 
-                        src={post.imageUrl}
-                        alt={post.title} 
-                        width={400}
-                        height={200}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-125 group-hover:opacity-75"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-5 relative bg-white h-full z-10">
-                      <div className="absolute -top-4 right-4 bg-brand-primary text-white text-[13px] font-bold px-3 py-1 rounded-b-xl shadow-md">
-                        عرض
+                <div key={post.id} className="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-start shrink-0">
+                  <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                    <Link href={`/blog/${post.slug}`} className="block relative">
+                      {/* Featured image with styled number badge */}
+                      <div className="relative h-[200px] w-full overflow-hidden bg-gray-100">
+                        <Image 
+                          src={post.imageUrl}
+                          alt={`تغطية وخدمات زين في ${post.title.replace('موظف 5G زين ', '').replace('موظف ألياف زين ', '').replace('عروض ألياف بصرية فى ', '')} - إنترنت 5G وألياف بصرية`} 
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        {/* Styled Article Number Overlay */}
+                        <div className="absolute top-0 right-0 bg-brand-primary text-white font-bold text-2xl px-4 py-2 rounded-bl-xl shadow-md flex items-center justify-center z-10 border-b-2 border-l-2 border-white/20 backdrop-blur-sm shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                          {post.id}
+                        </div>
                       </div>
-                      <h3 className="text-lg md:text-xl font-bold text-[#262626] mb-3 leading-snug">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-[#666c74] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 leading-relaxed">
-                        متاح الآن التأسيس الفوري والتركيب المجاني...
+                    </Link>
+                    <div className="p-5 flex flex-col flex-grow relative">
+                      <Link href={`/blog/${post.slug}`}>
+                        <h3 className="text-xl font-bold text-[#333] mb-3 leading-snug hover:text-brand-primary transition-colors cursor-pointer">
+                          {post.title}
+                        </h3>
+                      </Link>
+                      <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                        تعرف على أفضل باقات وتغطية 5G والألياف البصرية في {post.title.replace('موظف 5G زين ', '').replace('موظف ألياف زين ', '').replace('عروض ألياف بصرية فى ', '')} وأهم المزايا والأسعار.
                       </p>
+                      <div className="text-left mt-auto border-t border-gray-100 pt-3">
+                        <Link href={`/blog/${post.slug}`} className="inline-block text-brand-primary font-bold hover:text-brand-secondary transition-colors text-sm items-center gap-1">
+                          المزيد..
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

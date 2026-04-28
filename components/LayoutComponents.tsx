@@ -42,7 +42,8 @@ export function Header() {
           {/* Desktop Right Side Links */}
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
              <a href="#coverage" className="font-bold hover:text-brand-primary transition text-lg">التغطية</a>
-             <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg">عروض التأسيس</Link>
+             <a href="#coverage" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
+             <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
           </div>
         </div>
       </header>
@@ -144,7 +145,8 @@ export function Footer() {
           <ul className="space-y-3">
             <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الرئيسية</Link></li>
             <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</a></li>
-            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> استكشف مقالات المدونة</Link></li>
+            <li><a href="#coverage" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة والتغطية</a></li>
+            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 text-brand-light"><span>›</span> عروض التأسيس الحصرية</Link></li>
           </ul>
         </div>
         
