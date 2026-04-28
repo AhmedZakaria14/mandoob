@@ -32,4 +32,5 @@ export const blogPosts: BlogPost[] = [
   { id: 24, slug: '24', title: 'عروض ألياف بصرية فى الجندارية', imageUrl: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png' },
   { id: 25, slug: '25', title: 'عروض ألياف بصرية فى المونسية', imageUrl: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png' },
   { id: 26, slug: '26', title: 'عروض ألياف بصرية فى النسيم الشرقي', imageUrl: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png' },
+  { id: 27, slug: '27', title: 'فوائد الترقية إلى باقة ألياف بصرية بسرعة 1000 ميجابت (1 جيجا)', imageUrl: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png' },
 ];

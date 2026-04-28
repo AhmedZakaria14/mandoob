@@ -58,13 +58,13 @@ export default function Home() {
                   href="https://wa.me/966596620358" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-brand-primary hover:bg-[#85ad1b] text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center gap-2 transition shadow-[0_10px_20px_rgba(149,193,31,0.3)]"
+                  className="bg-brand-primary hover:bg-[#85ad1b] text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center gap-2 transition shadow-[0_10px_20px_rgba(149,193,31,0.3)] w-full sm:w-auto"
                 >
                   <span>طلب عبر الواتساب</span>
                 </a>
                 <a 
                   href="tel:0596620358" 
-                  className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center transition shadow-sm bg-white/50 backdrop-blur-sm"
+                  className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center transition shadow-sm bg-white/50 backdrop-blur-sm w-full sm:w-auto"
                 >
                   <span dir="ltr">0596620358</span>
                 </a>
@@ -125,18 +125,18 @@ export default function Home() {
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {packages.map((pkg) => (
-                <div key={pkg.id} className={`bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] p-10 transition-all duration-500 hover:scale-105 border-t-4 text-center group relative z-10 border-x border-b mx-auto w-full max-w-[400px] ${pkg.isPopular ? 'border-brand-primary shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] border-gray-200 hover:bg-white' : 'border-gray-400 shadow-[7px_7px_0_0_#d1d5db] hover:shadow-[7px_7px_0_0_#9ca3af] border-gray-200 hover:bg-white'}`}>
+                <div key={pkg.id} className={`bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] p-6 sm:p-10 transition-all duration-500 hover:scale-105 border-t-4 text-center group relative z-10 border-x border-b mx-auto w-full max-w-[400px] ${pkg.isPopular ? 'border-brand-primary shadow-[4px_4px_0_0_#95c11f] md:shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] border-gray-200 hover:bg-white' : 'border-gray-400 shadow-[4px_4px_0_0_#d1d5db] md:shadow-[7px_7px_0_0_#d1d5db] hover:shadow-[7px_7px_0_0_#9ca3af] border-gray-200 hover:bg-white'}`}>
                   {pkg.isPopular && (
-                    <div className="absolute top-4 -right-8 overflow-hidden bg-brand-primary text-white text-center -rotate-45 shadow-sm px-8 py-1 origin-center border border-gray-100 font-bold block">
+                    <div className="absolute top-4 -right-8 overflow-hidden bg-brand-primary text-white text-center -rotate-45 shadow-sm px-8 py-1 origin-center border border-gray-100 font-bold block text-sm sm:text-base">
                       الأكثر طلباً
                     </div>
                   )}
-                  <h3 className="font-bold text-2xl text-[#262626] mb-2">{pkg.title}</h3>
+                  <h3 className="font-bold text-xl sm:text-2xl text-[#262626] mb-2">{pkg.title}</h3>
                   <p className="text-gray-500 text-sm mb-6 min-h-[40px]">{pkg.subtitle}</p>
                   
                   <h4 className="text-brand-secondary mb-6 flex flex-row-reverse justify-center items-baseline border-b border-gray-200 pb-6">
-                    <span className="text-xl pt-8 text-[#191b8a]">{pkg.currency}/{pkg.period}</span>
-                    <span className="font-black text-[70px] px-2 leading-none text-[#191b8a]">{pkg.price}</span>
+                    <span className="text-lg sm:text-xl pt-8 text-[#191b8a]">{pkg.currency}/{pkg.period}</span>
+                    <span className="font-black text-[50px] sm:text-[70px] px-2 leading-none text-[#191b8a]">{pkg.price}</span>
                   </h4>
                   
                   <ul className="text-right text-gray-500 space-y-0 mb-8 bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative">

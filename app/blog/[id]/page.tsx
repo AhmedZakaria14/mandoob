@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Generate static parameters for all 26 blog posts
+// Generate static parameters for all blog posts
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     id: post.slug,

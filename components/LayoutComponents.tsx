@@ -72,17 +72,17 @@ export function Header() {
               </button>
             </div>
             
-            <nav className="flex flex-col gap-6 text-lg font-bold text-white">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary transition flex items-center gap-3">
+            <nav className="flex flex-col gap-2 text-lg font-bold text-white">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الرئيسية
               </Link>
-              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary transition flex items-center gap-3">
+              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الخدمات
               </a>
-              <a href="#coverage" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary transition flex items-center gap-3">
+              <a href="#coverage" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 مناطق التغطية
               </a>
-              <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary transition flex items-center gap-3">
+              <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 عروض موضفين الرياض
               </Link>
             </nav>
@@ -142,19 +142,19 @@ export function Footer() {
         <div>
           <h4 className="text-lg font-bold mb-4 border-b-2 border-brand-light pb-2 inline-block">الأقسام والمدونة</h4>
           <ul className="space-y-3">
-            <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> الرئيسية</Link></li>
-            <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> الخدمات</a></li>
-            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start"><span>›</span> استكشف مقالات المدونة</Link></li>
+            <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الرئيسية</Link></li>
+            <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</a></li>
+            <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> استكشف مقالات المدونة</Link></li>
           </ul>
         </div>
         
         <div>
           <h4 className="text-lg font-bold mb-4 border-b-2 border-brand-light pb-2 inline-block">خدماتنا الرئيسية</h4>
           <ul className="space-y-3">
-            <li className="flex items-center gap-2 justify-center md:justify-start"><span>›</span> تأسيس إنترنت 5G منزلي</li>
-            <li className="flex items-center gap-2 justify-center md:justify-start"><span>›</span> تركيب ألياف بصرية (فايبر)</li>
-            <li className="flex items-center gap-2 justify-center md:justify-start"><span>›</span> ترقية الباقات والسرعات</li>
-            <li className="flex items-center gap-2 justify-center md:justify-start"><span>›</span> دعم فني واستفسار مجاني</li>
+            <li className="flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> تأسيس إنترنت 5G منزلي</li>
+            <li className="flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> تركيب ألياف بصرية (فايبر)</li>
+            <li className="flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> ترقية الباقات والسرعات</li>
+            <li className="flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> دعم فني واستفسار مجاني</li>
           </ul>
         </div>
       </div>
