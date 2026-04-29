@@ -26,17 +26,17 @@ export function Slideshow() {
   }, []);
 
   return (
-    <div className="relative w-full h-[400px] sm:aspect-[16/9] md:h-[500px] overflow-hidden rounded-2xl shadow-2xl border border-white flex items-center justify-center bg-gray-50/50">
+    <div className="relative w-full min-h-[300px] md:min-h-[500px] flex items-center justify-center bg-gray-50/50 rounded-2xl shadow-md border border-gray-100 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
           src={homeImages[currentIndex].src}
           alt={homeImages[currentIndex].alt}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="w-full h-auto object-cover max-h-[600px]"
         />
       </AnimatePresence>
       

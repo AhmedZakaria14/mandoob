@@ -218,56 +218,74 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Blog Posts Section */}
+        {/* Blog Posts & SEO Section */}
         <section id="coverage" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center pb-12">
               <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#333]">
-                تغطية أحياء الرياض
+                المدونة وعروض زين فايبر
                 <span className="block w-1/2 h-1 bg-brand-primary mx-auto mt-2"></span>
               </h2>
-              <p className="text-gray-500 text-lg">أحدث المقالات والتغطيات في بمناطق الرياض المختلفة.</p>
+              <p className="text-gray-500 text-lg">أحدث المقالات والمعلومات لتأسيس إنترنت زين 5G والألياف البصرية.</p>
             </div>
             
-            {/* Grid layout for all screen sizes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
+            {/* Featured Articles Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12">
               {blogPosts.map((post) => (
                 <div key={post.id} className="w-full h-full">
-                  <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                  <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
                     <Link href={`/blog/${post.slug}`} className="block relative">
-                      {/* Featured image with styled number badge */}
-                      <div className="relative h-[200px] w-full overflow-hidden bg-gray-100">
+                      <div className="relative h-[220px] w-full overflow-hidden bg-gray-100">
                         <Image 
                           src={post.imageUrl}
-                          alt={`تغطية وخدمات زين في ${post.title.replace('موظف 5G زين ', '').replace('موظف ألياف زين ', '').replace('عروض ألياف بصرية فى ', '')} - إنترنت 5G وألياف بصرية`} 
+                          alt={`${post.title} - عروض وباقات زين للإنترنت المنزلي 5G والألياف البصرية`} 
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
-                        {/* Styled Article Number Overlay */}
-                        <div className="absolute top-0 right-0 bg-brand-primary text-white font-bold text-2xl px-4 py-2 rounded-bl-xl shadow-md flex items-center justify-center z-10 border-b-2 border-l-2 border-white/20 backdrop-blur-sm shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                          {post.id}
+                        <div className="absolute top-0 right-0 bg-brand-primary text-white font-bold text-xl px-4 py-2 rounded-bl-xl shadow-md z-10 border-b border-l border-white/20">
+                          مقال حصري
                         </div>
                       </div>
                     </Link>
-                    <div className="p-5 flex flex-col flex-grow relative">
+                    <div className="p-6 flex flex-col flex-grow relative">
                       <Link href={`/blog/${post.slug}`}>
                         <h3 className="text-xl font-bold text-[#333] mb-3 leading-snug hover:text-brand-primary transition-colors cursor-pointer">
                           {post.title}
                         </h3>
                       </Link>
                       <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                        تعرف على أفضل باقات وتغطية 5G والألياف البصرية في {post.title.replace('موظف 5G زين ', '').replace('موظف ألياف زين ', '').replace('عروض ألياف بصرية فى ', '')} وأهم المزايا والأسعار.
+                        تعرف على أحدث عروض وباقات الإنترنت المنزلي من شركة زين، شاملة تفاصيل التأسيس المجاني والراوتر بدون رسوم، والتغطية الشاملة للجيل الخامس 5G والألياف البصرية.
                       </p>
-                      <div className="text-left mt-auto border-t border-gray-100 pt-3">
-                        <Link href={`/blog/${post.slug}`} className="inline-block text-brand-primary font-bold hover:text-brand-secondary transition-colors text-sm items-center gap-1">
-                          المزيد..
+                      <div className="text-left mt-auto border-t border-gray-100 pt-4">
+                        <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-primary font-bold hover:text-brand-secondary transition-colors text-sm">
+                          اقرأ المزيد <span className="mr-1 text-lg leading-none">←</span>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Keyword-Rich SEO Content */}
+            <div className="max-w-5xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
+              <h3 className="text-2xl font-black text-brand-secondary mb-6 flex items-center gap-3">
+                <span className="text-brand-primary">✦</span> الدليل الشامل لخدمات زين 5G والألياف البصرية (زين فايبر)
+              </h3>
+              
+              <div className="prose prose-lg text-gray-600 font-medium leading-loose space-y-6">
+                <p>
+                  يُعد البحث عن <strong className="text-brand-primary">أفضل إنترنت منزلي</strong> خطوة حاسمة للتمتع بتجربة تصفح سلسة، وهنا تبرز <strong className="text-brand-secondary">عروض زين 5G</strong> وخدمات <strong className="text-brand-secondary">زين فايبر (الألياف البصرية)</strong> كأفضل الحلول في السوق السعودي. نوفر لك <strong className="text-[#333]">تأسيس وتركيب إنترنت 5G مجاني</strong> بالكامل مع <strong className="text-brand-primary">راوتر مجاني</strong> عند الاشتراك في إحدى <strong className="text-[#333]">باقات زين المفتوحة واللامحدودة</strong>.
+                </p>
+                <p>
+                  من خلال التواصل المباشر مع <strong className="text-brand-secondary">مندوب مبيعات زين</strong> أو <strong className="text-[#333]">موظف زين المعتمد</strong>، يمكنك طلب <strong className="text-brand-primary">تأسيس الألياف البصرية</strong> لمنزلك بأعلى معايير الجودة المتمثلة في سرعات تصل إلى <strong className="text-brand-secondary">1000 ميجابت (1 جيجا)</strong> والتي توفر تجربة خيالية في الألعاب (Gaming) والبث بدقة 4K بدون أي انقطاع. نحن نوفر <strong className="text-[#333]">تركيب بوكسات ألياف بصرية</strong> و <strong className="text-brand-primary">تمديد كابلات فايبر</strong> في أسرع وقت بواسطة فريق <strong className="text-[#333]">مندوب زين الفني</strong> المتميز.
+                </p>
+                <p>
+                  سواء كنت تتواجد في الرياض، جدة، الدمام، أو أي مدينة أخرى تتطلع إلى <strong className="text-[#333]">اشتراك زين فايبر</strong>، فإننا نغطي أفضل الأحياء والمناطق لضمان استقرار الشبكة. 
+                  تشمل كلمات البحث الشائعة للوصول لخدماتنا: <strong className="text-gray-400 font-normal">الإنترنت المنزلي من زين، تغطية الألياف البصرية، ارقام مناديب زين، فني تركيب راوتر زين، تفعيل زين 5G المنزلية، باقة 300 ميجابت بلس، باقة 500 بريميوم، أرخص نت منزلي لامحدود، تأسيس خط فايبر، رقم موظف زين للنت</strong>.
+                </p>
+              </div>
             </div>
           </div>
         </section>
