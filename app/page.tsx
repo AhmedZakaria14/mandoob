@@ -29,6 +29,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Service",
               "serviceType": "تأسيس وتركيب إنترنت 5G وألياف بصرية",
+              "name": "مبيعات زين 5G وألياف",
               "provider": {
                 "@type": "Organization",
                 "name": "مبيعات زين 5G وألياف",
@@ -37,7 +38,22 @@ export default function Home() {
               },
               "areaServed": "المملكة العربية السعودية",
               "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",
-              "url": process.env.APP_URL || 'https://example.com'
+              "url": process.env.APP_URL || 'https://example.com',
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "باقات زين المتاحة",
+                "itemListElement": packages.map((pkg, idx) => ({
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": pkg.title,
+                    "description": pkg.subtitle
+                  },
+                  "price": pkg.price,
+                  "priceCurrency": "SAR",
+                  "url": process.env.APP_URL || 'https://example.com'
+                }))
+              }
             })
           }}
         />
@@ -123,9 +139,9 @@ export default function Home() {
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
               {packages.map((pkg) => (
-                <div key={pkg.id} className={`bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] p-6 sm:p-10 transition-all duration-500 hover:scale-105 border-t-4 text-center group relative z-10 border-x border-b mx-auto w-full max-w-[400px] ${pkg.isPopular ? 'border-brand-primary shadow-[4px_4px_0_0_#95c11f] md:shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] border-gray-200 hover:bg-white' : 'border-gray-400 shadow-[4px_4px_0_0_#d1d5db] md:shadow-[7px_7px_0_0_#d1d5db] hover:shadow-[7px_7px_0_0_#9ca3af] border-gray-200 hover:bg-white'}`}>
+                <div key={pkg.id} className={`flex-1 min-w-[300px] max-w-[400px] bg-[#f3f3f3] bg-gradient-to-b from-white/15 to-transparent rounded-[30px] p-6 sm:p-10 transition-all duration-500 hover:scale-105 border-t-4 text-center group relative z-10 border-x border-b ${pkg.isPopular ? 'border-brand-primary shadow-[4px_4px_0_0_#95c11f] md:shadow-[7px_7px_0_0_#95c11f] hover:shadow-[7px_7px_0_0_#c4eb5c] border-gray-200 hover:bg-white' : 'border-gray-400 shadow-[4px_4px_0_0_#d1d5db] md:shadow-[7px_7px_0_0_#d1d5db] hover:shadow-[7px_7px_0_0_#9ca3af] border-gray-200 hover:bg-white'}`}>
                   {pkg.isPopular && (
                     <div className="absolute top-4 -right-8 overflow-hidden bg-brand-primary text-white text-center -rotate-45 shadow-sm px-8 py-1 origin-center border border-gray-100 font-bold block text-sm sm:text-base">
                       الأكثر طلباً
@@ -168,6 +184,40 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Installation Gallery Section */}
+        <section id="gallery" className="py-20 bg-white border-t border-b border-gray-200">
+          <div className="container mx-auto px-4">
+            <div className="text-center pb-12">
+              <h2 className="text-3xl font-bold text-[#333] mb-4 relative inline-block">
+                معرض أعمالنا في التركيبات والتأسيس
+                <span className="block w-1/2 h-1 bg-brand-primary mx-auto mt-2"></span>
+              </h2>
+              <p className="text-gray-500 text-lg">جانب من أعمال تركيب بوكسات الألياف البصرية وتأسيس شبكات زين فايبر بأعلى معايير الجودة.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {[
+                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/zain_fiber_rdqmd6.jpg", alt: "تركيب بوكسات ألياف بصرية لشركة زين فايبر" },
+                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461698/WhatsApp_Image_2026-04-28_at_2.57.08_PM_z4ytos.jpg", alt: "تأسيس وإنشاء شبكات الألياف البصرية وزين فايبر" },
+                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_2_ztdosg.jpg", alt: "تمديد كابلات وتجهيز بوكسات الألياف البصرية زين" },
+                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_1_luo5ux.jpg", alt: "مندوب وموظف تركيب الألياف البصرية فايبر من زين" }
+              ].map((img, idx) => (
+                <div key={idx} className="relative h-[250px] md:h-[300px] w-full rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
+                  <Image 
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="text-white font-bold text-sm leading-tight drop-shadow-md">{img.alt}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Blog Posts Section */}
         <section id="coverage" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -179,10 +229,10 @@ export default function Home() {
               <p className="text-gray-500 text-lg">أحدث المقالات والتغطيات في بمناطق الرياض المختلفة.</p>
             </div>
             
-            {/* Mobile: Horizontal Scroll (CSS Snap), Desktop: Grid */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hide-scrollbar">
+            {/* Grid layout for all screen sizes */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
               {blogPosts.map((post) => (
-                <div key={post.id} className="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-start shrink-0">
+                <div key={post.id} className="w-full h-full">
                   <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
                     <Link href={`/blog/${post.slug}`} className="block relative">
                       {/* Featured image with styled number badge */}

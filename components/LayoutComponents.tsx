@@ -41,6 +41,7 @@ export function Header() {
           
           {/* Desktop Right Side Links */}
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
+             <a href="#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</a>
              <a href="#coverage" className="font-bold hover:text-brand-primary transition text-lg">التغطية</a>
              <a href="#coverage" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
              <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
@@ -79,6 +80,9 @@ export function Header() {
               </Link>
               <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الخدمات
+              </a>
+              <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+                أعمال التركيب
               </a>
               <a href="#coverage" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 مناطق التغطية
