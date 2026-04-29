@@ -54,8 +54,7 @@ export function Header() {
           {/* Desktop Right Side Links */}
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
              <a href="#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</a>
-             <Link href="/coverage" className="font-bold hover:text-brand-primary transition text-lg">التغطية</Link>
-             <a href="#coverage" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
+             <a href="#blog" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
              <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
           </div>
         </div>
@@ -96,9 +95,6 @@ export function Header() {
               <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 أعمال التركيب
               </a>
-              <Link href="/coverage" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
-                مناطق التغطية
-              </Link>
               <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 عروض موضفين الرياض
               </Link>
@@ -144,7 +140,7 @@ export function Footer() {
           <h4 className="text-2xl font-bold text-brand-primary mb-6">احصل على استشارة لتغطية حيك</h4>
           <div className="bg-white p-2 rounded-full shadow-md flex">
             <input type="text" placeholder="اكتب موقعك للتحقق من التغطية..." className="flex-1 px-4 outline-none rounded-r-full" />
-            <Link href="/coverage" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</Link>
+            <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</a>
           </div>
         </div>
       </div>
@@ -161,8 +157,7 @@ export function Footer() {
           <ul className="space-y-3">
             <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الرئيسية</Link></li>
             <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</a></li>
-            <li><a href="#coverage" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة</a></li>
-            <li><Link href="/coverage" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span>التغطية</Link></li>
+            <li><a href="#blog" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة</a></li>
             <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 text-brand-light"><span>›</span> عروض التأسيس الحصرية</Link></li>
           </ul>
         </div>
