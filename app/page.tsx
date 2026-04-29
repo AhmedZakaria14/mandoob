@@ -233,14 +233,14 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12">
               {blogPosts.map((post) => (
                 <div key={post.id} className="w-full h-full">
-                  <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                  <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full md:hover:shadow-xl transition-shadow duration-300">
                     <Link href={`/blog/${post.slug}`} className="block relative">
                       <div className="relative h-[220px] w-full overflow-hidden bg-gray-100">
                         <Image 
                           src={post.imageUrl}
                           alt={`${post.title} - عروض وباقات زين للإنترنت المنزلي 5G والألياف البصرية`} 
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover transition-transform duration-500 md:group-hover:scale-105"
                           loading="lazy"
                         />
                         <div className="absolute top-0 right-0 bg-brand-primary text-white font-bold text-xl px-4 py-2 rounded-bl-xl shadow-md z-10 border-b border-l border-white/20">
@@ -250,7 +250,7 @@ export default function Home() {
                     </Link>
                     <div className="p-6 flex flex-col flex-grow relative">
                       <Link href={`/blog/${post.slug}`}>
-                        <h3 className="text-xl font-bold text-[#333] mb-3 leading-snug hover:text-brand-primary transition-colors cursor-pointer">
+                        <h3 className="text-xl font-bold text-[#333] mb-3 leading-snug md:hover:text-brand-primary transition-colors cursor-pointer">
                           {post.title}
                         </h3>
                       </Link>

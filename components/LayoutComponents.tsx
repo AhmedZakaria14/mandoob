@@ -1,11 +1,23 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -112,11 +124,11 @@ export function Header() {
         href="https://wa.me/966596620358" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-5 left-5 z-[55] w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 group"
+        className="fixed bottom-5 left-5 z-[55] w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group"
         aria-label="تواصل معنا عبر واتساب"
       >
         <Phone size={28} />
-        <span className="absolute left-16 bg-gray-800 text-[#ececec] px-3 py-1 rounded hidden group-hover:block text-sm whitespace-nowrap shadow-md">
+        <span className="absolute left-16 bg-gray-800 text-[#ececec] px-3 py-1 rounded hidden md:group-hover:block text-sm whitespace-nowrap shadow-md">
           تواصل معنا!
         </span>
       </a>

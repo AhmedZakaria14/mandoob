@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   keywords: ['زين', 'انترنت منزلي', '5G', 'ألياف بصرية', 'فايبر', 'عروض زين', 'تركيب انترنت', 'مندوب زين', 'تأسيس زين', 'ألياف زين', 'راوتر زين', 'السعودية', 'الرياض', 'إنترنت لا محدود'],
   authors: [{ name: 'موظف مبيعات زين' }],
   creator: 'مبيعات زين',
+  formatDetection: {
+    telephone: false,
+    date: false,
+    email: false,
+    address: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'ar_SA',

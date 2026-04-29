@@ -41,14 +41,20 @@ export function Slideshow() {
       </AnimatePresence>
       
       {/* Pagination indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-10 p-2 bg-black/40 rounded-full backdrop-blur-sm">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 z-10 p-2 bg-black/40 rounded-full backdrop-blur-sm">
         {homeImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${idx === currentIndex ? 'bg-brand-primary w-6' : 'bg-white/60 hover:bg-white'}`}
+            className="p-2 focus:outline-none"
             aria-label={`عرض الصورة رقم ${idx + 1}`}
-          />
+          >
+            <div 
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                idx === currentIndex ? 'bg-brand-primary w-6' : 'bg-white/60 w-2.5 hover:bg-white'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
