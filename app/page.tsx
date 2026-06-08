@@ -1,3 +1,4 @@
+import React from 'react';
 import { packages } from '@/data/packages';
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
@@ -151,7 +152,12 @@ export default function Home() {
                   <p className="text-gray-500 text-sm mb-6 min-h-[40px]">{pkg.subtitle}</p>
                   
                   <h4 className="text-brand-secondary mb-6 flex flex-row-reverse justify-center items-baseline border-b border-gray-200 pb-6">
-                    <span className="text-lg sm:text-xl pt-8 text-[#191b8a]">{pkg.currency}/{pkg.period}</span>
+                    <span className="text-lg sm:text-xl pt-8 text-[#191b8a] flex items-center justify-center gap-1">
+                      <span>/{pkg.period}</span>
+                      <svg viewBox="0 0 1086 1114" className="w-5 h-5 fill-current shrink-0 -mb-1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M699.62 1113.02c-20.06 44.48-33.32 92.75-38.4 143.37l424.51-90.24c20.06-44.47 33.31-92.75 38.4-143.37zM1085.73 895.8c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.33v-135.2l292.27-62.11c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.27V66.13c-50.67 28.45-95.67 66.32-132.25 110.99v403.35l-132.25 28.11V0c-50.67 28.44-95.67 66.32-132.25 110.99v525.69l-295.91 62.88c-20.06 44.47-33.33 92.75-38.42 143.37l334.33-71.05v170.26l-358.3 76.14c-20.06 44.47-33.32 92.75-38.4 143.37l375.04-79.7c30.53-6.35 56.77-24.4 73.83-49.24l68.78-101.97c7.14-10.55 11.3-23.27 11.3-36.97V743.77l132.25-28.11v270.4l424.53-90.28Z"></path>
+                      </svg>
+                    </span>
                     <span className="font-black text-[50px] sm:text-[70px] px-2 leading-none text-[#191b8a]">{pkg.price}</span>
                   </h4>
                   
@@ -160,7 +166,18 @@ export default function Home() {
                     {pkg.highlights.map((hlt, idx) => (
                       <li key={idx} className="flex items-center gap-3 font-bold text-black border-b border-gray-100 pb-3 mb-3 last:border-0 last:pb-0 last:mb-0">
                         <span className="text-brand-primary shrink-0 text-xl font-sans">✓</span> 
-                        {hlt}
+                        <span className="flex-1">
+                          {hlt.split("ر.س").map((part, partIdx, arr) => (
+                            <React.Fragment key={partIdx}>
+                              {part}
+                              {partIdx < arr.length - 1 && (
+                                <svg viewBox="0 0 1086 1114" className="w-4 h-4 fill-current inline-block mx-1 mb-1 shadow-sm opacity-90" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M699.62 1113.02c-20.06 44.48-33.32 92.75-38.4 143.37l424.51-90.24c20.06-44.47 33.31-92.75 38.4-143.37zM1085.73 895.8c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.33v-135.2l292.27-62.11c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.27V66.13c-50.67 28.45-95.67 66.32-132.25 110.99v403.35l-132.25 28.11V0c-50.67 28.44-95.67 66.32-132.25 110.99v525.69l-295.91 62.88c-20.06 44.47-33.33 92.75-38.42 143.37l334.33-71.05v170.26l-358.3 76.14c-20.06 44.47-33.32 92.75-38.4 143.37l375.04-79.7c30.53-6.35 56.77-24.4 73.83-49.24l68.78-101.97c7.14-10.55 11.3-23.27 11.3-36.97V743.77l132.25-28.11v270.4l424.53-90.28Z"></path>
+                                </svg>
+                              )}
+                            </React.Fragment>
+                          ))}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -169,7 +186,18 @@ export default function Home() {
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                          <span className="shrink-0 mt-0.5 text-xs text-brand-secondary">✦</span>
-                         <span>{feature}</span>
+                         <span>
+                           {feature.split("ر.س").map((part, partIdx, arr) => (
+                             <React.Fragment key={partIdx}>
+                               {part}
+                               {partIdx < arr.length - 1 && (
+                                 <svg viewBox="0 0 1086 1114" className="w-3 h-3 fill-current inline-block mx-0.5 mb-0.5 shadow-sm opacity-90" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M699.62 1113.02c-20.06 44.48-33.32 92.75-38.4 143.37l424.51-90.24c20.06-44.47 33.31-92.75 38.4-143.37zM1085.73 895.8c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.33v-135.2l292.27-62.11c20.06-44.47 33.32-92.75 38.4-143.37l-330.68 70.27V66.13c-50.67 28.45-95.67 66.32-132.25 110.99v403.35l-132.25 28.11V0c-50.67 28.44-95.67 66.32-132.25 110.99v525.69l-295.91 62.88c-20.06 44.47-33.33 92.75-38.42 143.37l334.33-71.05v170.26l-358.3 76.14c-20.06 44.47-33.32 92.75-38.4 143.37l375.04-79.7c30.53-6.35 56.77-24.4 73.83-49.24l68.78-101.97c7.14-10.55 11.3-23.27 11.3-36.97V743.77l132.25-28.11v270.4l424.53-90.28Z"></path>
+                                 </svg>
+                               )}
+                             </React.Fragment>
+                           ))}
+                         </span>
                       </li>
                     ))}
                   </ul>
