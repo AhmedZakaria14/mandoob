@@ -10,6 +10,9 @@ export function Header() {
   const pathname = usePathname();
 
   const isSalam = pathname === '/salam';
+  const displayPhone = isSalam ? "0508348048" : "0596620358";
+  const whatsappPhone = isSalam ? "966508348048" : "966596620358";
+
   const logoSrc = isSalam 
     ? "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png"
     : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
@@ -114,7 +117,7 @@ export function Header() {
 
             <div className="mt-auto pt-6 border-t border-gray-700">
                <a 
-                 href="https://wa.me/966596620358" 
+                 href={`https://wa.me/${whatsappPhone}`} 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="bg-[#18d26e] hover:bg-[#15b960] w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition text-white shadow-lg border-2 border-white"
@@ -129,7 +132,7 @@ export function Header() {
 
       {/* Floating WhatsApp Button (.callBottom equivalent) */}
       <a 
-        href="https://wa.me/966596620358" 
+        href={`https://wa.me/${whatsappPhone}`} 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-5 left-5 z-[55] w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group"
@@ -145,6 +148,11 @@ export function Header() {
 }
 
 export function Footer() {
+  const pathname = usePathname();
+  const isSalam = pathname === '/salam';
+  const displayPhone = isSalam ? "0508348048" : "0596620358";
+  const whatsappPhone = isSalam ? "966508348048" : "966596620358";
+
   return (
     <footer className="bg-brand-primary text-white pt-16">
       <div className="bg-brand-gray py-12 text-center text-[#444] mb-8 shadow-inner">
@@ -152,7 +160,7 @@ export function Footer() {
           <h4 className="text-2xl font-bold text-brand-primary mb-6">احصل على استشارة لتغطية حيك</h4>
           <div className="bg-white p-2 rounded-full shadow-md flex">
             <input type="text" placeholder="اكتب موقعك للتحقق من التغطية..." className="flex-1 px-4 outline-none rounded-r-full" />
-            <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</a>
+            <a href={`https://wa.me/${whatsappPhone}`} target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</a>
           </div>
         </div>
       </div>
@@ -161,7 +169,7 @@ export function Footer() {
         <div className="bg-white text-[#5e5e5e] p-6 rounded-lg shadow-sm">
           <h3 className="text-2xl font-bold mb-4 text-brand-primary uppercase">تواصل معنا</h3>
           <p className="mb-4">اتصل بنا الآن للحصول على أفضل عروض 5G والألياف البصرية المتطورة، نوفر لك راوتر مجاني مع التركيب.</p>
-          <a href="tel:0596620358" className="text-brand-primary font-bold text-3xl block" dir="ltr">0596620358</a>
+          <a href={`tel:${displayPhone}`} className="text-brand-primary font-bold text-3xl block" dir="ltr">{displayPhone}</a>
         </div>
         
         <div>
@@ -190,7 +198,7 @@ export function Footer() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لمحرك إنترنت زين.</p>
           <div className="flex gap-2">
-            <a href="https://wa.me/966596620358" className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-primary transition">
+            <a href={`https://wa.me/${whatsappPhone}`} className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-primary transition">
               <Phone size={20} />
             </a>
           </div>
