@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -122,7 +122,7 @@ export function Header() {
                  rel="noopener noreferrer" 
                  className="bg-[#18d26e] hover:bg-[#15b960] w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition text-white shadow-lg border-2 border-white"
                >
-                 <Phone size={20} />
+                 <MessageCircle size={20} />
                  <span>تواصل واتساب</span>
                </a>
             </div>
@@ -130,19 +130,34 @@ export function Header() {
         </div>
       )}
 
-      {/* Floating WhatsApp Button (.callBottom equivalent) */}
-      <a 
-        href={`https://wa.me/${whatsappPhone}`} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-5 left-5 z-[55] w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group"
-        aria-label="تواصل معنا عبر واتساب"
-      >
-        <Phone size={28} />
-        <span className="absolute left-16 bg-gray-800 text-[#ececec] px-3 py-1 rounded hidden md:group-hover:block text-sm whitespace-nowrap shadow-md">
-          تواصل معنا!
-        </span>
-      </a>
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-5 left-5 z-[55] flex flex-col gap-4">
+        {/* Floating Call Button */}
+        <a 
+          href={`tel:${displayPhone}`}
+          className="w-14 h-14 bg-brand-primary rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group relative"
+          aria-label="اتصل بنا الآن"
+        >
+          <Phone size={28} />
+          <span className="absolute left-16 bg-gray-800 text-white px-3 py-1 rounded hidden md:group-hover:block text-sm whitespace-nowrap shadow-md">
+            اتصل بنا الآن!
+          </span>
+        </a>
+
+        {/* Floating WhatsApp Button */}
+        <a 
+          href={`https://wa.me/${whatsappPhone}`} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group relative"
+          aria-label="تواصل معنا عبر واتساب"
+        >
+          <MessageCircle size={28} />
+          <span className="absolute left-16 bg-gray-800 text-white px-3 py-1 rounded hidden md:group-hover:block text-sm whitespace-nowrap shadow-md">
+            تواصل واتساب
+          </span>
+        </a>
+      </div>
     </>
   );
 }
@@ -199,7 +214,7 @@ export function Footer() {
           <p>&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لمحرك إنترنت زين.</p>
           <div className="flex gap-2">
             <a href={`https://wa.me/${whatsappPhone}`} className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-primary transition">
-              <Phone size={20} />
+              <MessageCircle size={20} />
             </a>
           </div>
         </div>
