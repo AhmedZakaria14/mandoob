@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function SalamPage() {
-  const [activeTab, setActiveTab] = useState<'fiber' | '5g'>('fiber');
+  const [activeTab, setActiveTab] = useState<'fiber' | '5g'>('5g');
   const [expandedPackage, setExpandedPackage] = useState<string | null>(null);
 
   const filteredPackages = salamPackages.filter(pkg => pkg.type === activeTab);
@@ -84,19 +84,6 @@ export default function SalamPage() {
         <div className="flex justify-center mb-12">
           <div className="bg-white p-2 rounded-2xl shadow-sm border border-gray-100 flex flex-row gap-2 max-w-md w-full">
             <button
-              onClick={() => setActiveTab('fiber')}
-              className={`flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 ${
-                activeTab === 'fiber' 
-                  ? 'bg-[#009045] text-white shadow-md' 
-                  : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Server className="w-5 h-5" />
-                <span>سلام فايبر</span>
-              </div>
-            </button>
-            <button
               onClick={() => setActiveTab('5g')}
               className={`flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 ${
                 activeTab === '5g' 
@@ -107,6 +94,19 @@ export default function SalamPage() {
               <div className="flex items-center justify-center gap-2">
                 <Wifi className="w-5 h-5" />
                 <span>سلام 5G</span>
+              </div>
+            </button>
+            <button
+              onClick={() => setActiveTab('fiber')}
+              className={`flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 ${
+                activeTab === 'fiber' 
+                  ? 'bg-[#009045] text-white shadow-md' 
+                  : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+              }`}
+            >
+              <div className="flex items-center justify-center gap-2">
+                <Server className="w-5 h-5" />
+                <span>سلام فايبر</span>
               </div>
             </button>
           </div>

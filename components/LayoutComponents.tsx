@@ -2,10 +2,18 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isSalam = pathname === '/salam';
+  const logoSrc = isSalam 
+    ? "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png"
+    : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
+  const logoAlt = isSalam ? "شعار سلام موبايل" : "شعار زين 5G وألياف بصرية";
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -42,11 +50,11 @@ export function Header() {
           {/* Centered Logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
             <Image 
-              src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png" 
-              alt="شعار زين 5G وألياف بصرية" 
+              src={logoSrc} 
+              alt={logoAlt} 
               width={200}
               height={100}
-              className="h-16 md:h-20 w-auto drop-shadow-md py-1" 
+              className={`h-16 md:h-24 w-auto object-contain drop-shadow-md py-1`} 
               loading="eager" 
             />
           </Link>
@@ -71,11 +79,11 @@ export function Header() {
           >
             <div className="flex justify-between items-center mb-10 border-b border-gray-700 pb-4">
               <Image 
-                src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png" 
-                alt="شعار زين" 
-                width={80}
-                height={40}
-                className="h-12 w-auto" 
+                src={logoSrc} 
+                alt={logoAlt} 
+                width={120}
+                height={60}
+                className={`h-12 w-auto object-contain`} 
               />
               <button 
                 onClick={() => setIsMobileMenuOpen(false)} 

@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     siteName: 'تأسيس إنترنت وتركيب فايبر 5G',
     images: [
       {
-        url: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780876904/WhatsApp_Image_2026-06-08_at_2.17.07_AM_3_jkenru.jpg',
+        url: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png',
         width: 1200,
         height: 630,
-        alt: 'عروض باقات سلام فايبر و 5G المنزلي',
+        alt: 'شعار سلام فايبر و 5G',
       },
     ],
     locale: 'ar_SA',
@@ -24,10 +24,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'عروض سلام فايبر و 5G | تأسيس إنترنت سلام في السعودية',
     description: 'أسرع إنترنت منزلي من سلام فايبر و 5G في السعودية. راوتر مجاني، سرعات تصل لـ 1000 ميجا.',
-    images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780876904/WhatsApp_Image_2026-06-08_at_2.17.07_AM_3_jkenru.jpg'],
+    images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png'],
   },
   alternates: {
     canonical: 'https://zein-vzcdefwnllokbnpr7ixyvf.europe-west2.run.app/salam',
+  },
+  icons: {
+    icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png',
+    shortcut: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png',
+    apple: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png',
   },
 };
 
@@ -49,7 +54,11 @@ export default function SalamLayout({
             "url": "https://zein-vzcdefwnllokbnpr7ixyvf.europe-west2.run.app/salam",
             "publisher": {
               "@type": "Organization",
-              "name": "تأسيس إنترنت وتركيب فايبر 5G"
+              "name": "تأسيس إنترنت وتركيب فايبر 5G",
+              "logo": {
+                 "@type": "ImageObject",
+                 "url": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png"
+              }
             },
             "offers": {
               "@type": "AggregateOffer",
