@@ -64,8 +64,8 @@ export function Header() {
           
           {/* Desktop Right Side Links */}
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
-             <a href="#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</a>
-             <a href="#blog" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
+             <a href="/#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</a>
+             <a href="/#blog" className="font-bold hover:text-brand-primary transition text-lg">المدونة</a>
              <Link href="/salam" className="font-bold hover:text-brand-primary transition text-lg text-green-600">سلام فايبر و 5G</Link>
              <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
           </div>
@@ -101,11 +101,14 @@ export function Header() {
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الرئيسية
               </Link>
-              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <a href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الخدمات
               </a>
-              <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <a href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 أعمال التركيب
+              </a>
+              <a href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+                المدونة
               </a>
               <Link href="/salam" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3 text-green-500">
                 عروض سلام فايبر و 5G
@@ -191,8 +194,8 @@ export function Footer() {
           <h4 className="text-lg font-bold mb-4 border-b-2 border-brand-light pb-2 inline-block">الأقسام والمدونة</h4>
           <ul className="space-y-3">
             <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الرئيسية</Link></li>
-            <li><a href="#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</a></li>
-            <li><a href="#blog" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة</a></li>
+            <li><a href="/#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</a></li>
+            <li><a href="/#blog" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة</a></li>
             <li><Link href="/salam" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold text-green-500"><span>›</span> سلام فايبر و 5G </Link></li>
             <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 text-brand-light"><span>›</span> عروض التأسيس الحصرية</Link></li>
           </ul>

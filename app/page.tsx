@@ -247,7 +247,7 @@ export default function Home() {
         </section>
 
         {/* Blog Posts & SEO Section */}
-        <section id="coverage" className="py-20 bg-gray-50">
+        <section id="blog" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center pb-12">
               <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#333]">
