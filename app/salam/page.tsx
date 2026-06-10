@@ -155,6 +155,35 @@ export default function SalamPage() {
           </div>
         )}
 
+        {/* Promotion Banner for Fiber */}
+        {activeTab === 'fiber' && (
+          <div className="max-w-7xl mx-auto mb-16 space-y-12">
+            <div className="text-center">
+              <h2 className="text-3xl font-black text-gray-900 mb-8 border-b-4 border-[#009045] inline-block pb-2">تفاصيل ومزايا سلام فايبر</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                {[
+                  "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781053456/WhatsApp_Image_2026-06-10_at_2.25.03_AM_s6tdwk.jpg",
+                  "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781053455/WhatsApp_Image_2026-06-10_at_2.25.03_AM_4_o1klra.jpg",
+                  "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781053456/WhatsApp_Image_2026-06-10_at_2.25.03_AM_1_mkrv2z.jpg",
+                  "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781053456/WhatsApp_Image_2026-06-10_at_2.25.03_AM_3_azoiii.jpg",
+                  "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781053456/WhatsApp_Image_2026-06-10_at_2.25.03_AM_2_zlrecv.jpg"
+                ].map((src, index) => (
+                  <div key={index} className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow bg-white p-2">
+                    <Image 
+                      src={src} 
+                      alt={`Salam Fiber Detail ${index + 1}`}
+                      width={500} 
+                      height={500} 
+                      className="rounded-xl w-full h-auto object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {filteredPackages.map((pkg) => (
