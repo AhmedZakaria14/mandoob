@@ -212,13 +212,29 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="bg-brand-secondary py-6 text-center text-sm border-t border-gray-700">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لمحرك إنترنت زين.</p>
-          <div className="flex gap-2">
-            <a href={`https://wa.me/${whatsappPhone}`} className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-primary transition">
-              <MessageCircle size={20} />
-            </a>
+      <div className="bg-brand-secondary py-8 text-center text-sm border-t border-gray-700">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-gray-300">&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لمحرك إنترنت زين.</p>
+          
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex items-center gap-2 group">
+              <span className="text-gray-400">تم التصميم والتطوير بواسطة</span>
+              <a 
+                href="https://NasharHub.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative overflow-hidden group/link px-4 py-1.5 rounded-lg bg-gradient-to-r from-brand-primary/10 to-brand-primary/5 border border-brand-primary/20 hover:border-brand-primary/50 transition-all duration-300 shadow-sm"
+              >
+                <span className="relative z-10 font-bold text-brand-primary group-hover/link:text-brand-secondary transition-colors duration-300">NasharHub.com</span>
+                <span className="absolute inset-0 bg-brand-primary/5 translate-y-full group-hover/link:translate-y-0 transition-transform duration-300"></span>
+              </a>
+            </div>
+
+            <div className="flex gap-3">
+              <a href={`https://wa.me/${whatsappPhone}`} className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary hover:border-brand-primary transition-all duration-300">
+                <MessageCircle size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
