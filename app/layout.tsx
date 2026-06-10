@@ -10,7 +10,7 @@ const cairo = Cairo({
 });
 
 // The base APP_URL can be used for canonical links
-const baseUrl = process.env.APP_URL || 'https://example.com';
+const baseUrl = process.env.APP_URL || 'https://xn-----ctdcm0aqck5plajre8a.com';
 
 export const metadata: Metadata = {
   title: {
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     description: 'أفضل عروض الإنترنت المنزلي 5G والألياف البصرية من زين السعودية. تأسيس سريع.',
     images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png'],
   },
+  verification: {
+    google: 'ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc',
+  },
   icons: {
     icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png',
     shortcut: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png',
@@ -74,7 +77,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#6366f1" />
-        <meta name="google-site-verification" content="ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

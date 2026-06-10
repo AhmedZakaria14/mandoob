@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'عروض وباقات سلام فايبر و 5G | إنترنت منزلي سريع',
     description: 'احصل على أرخص وأسرع إنترنت منزلي من سلام فايبر و 5G في السعودية. راوتر مجاني، سرعات تصل لـ 1000 ميجا. اطلب التأسيس الآن عبر 0508348048.',
-    url: 'https://zein-vzcdefwnllokbnpr7ixyvf.europe-west2.run.app/salam',
+    url: 'https://xn-----ctdcm0aqck5plajre8a.com/salam',
     siteName: 'تأسيس إنترنت وتركيب فايبر 5G',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png'],
   },
   alternates: {
-    canonical: 'https://zein-vzcdefwnllokbnpr7ixyvf.europe-west2.run.app/salam',
+    canonical: 'https://xn-----ctdcm0aqck5plajre8a.com/salam',
   },
   icons: {
     icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png',
@@ -51,7 +51,7 @@ export default function SalamLayout({
             "@type": "WebPage",
             "name": "عروض سلام فايبر و 5G | تأسيس إنترنت سلام في السعودية",
             "description": "استمتع بأفضل باقات إنترنت سلام فايبر و 5G المنزلية في السعودية، سرعات عالية تصل إلى 1000 ميجابت وعروض حصرية، راوتر وتأسيس مجاني.",
-            "url": "https://zein-vzcdefwnllokbnpr7ixyvf.europe-west2.run.app/salam",
+            "url": "https://xn-----ctdcm0aqck5plajre8a.com/salam",
             "publisher": {
               "@type": "Organization",
               "name": "تأسيس إنترنت وتركيب فايبر 5G",
