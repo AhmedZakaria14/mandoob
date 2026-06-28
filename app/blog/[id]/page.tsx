@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 
   return {
-    title: `${post.title} | دليل عروض وباقات زين السعودية`,
-    description: `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
-    keywords: [post.title, post.title.split(' ').join(', '), 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'الرياض'],
+    title: post.seoTitle || `${post.title} | دليل عروض وباقات زين السعودية`,
+    description: post.seoDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
+    keywords: post.keywords || [post.title, post.title.split(' ').join(', '), 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'الرياض'],
     openGraph: {
-      title: `${post.title} | عروض 5G وألياف زين`,
-      description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
+      title: post.seoTitle || `${post.title} | عروض 5G وألياف زين`,
+      description: post.seoDescription || `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
       type: 'article',
       url: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
       images: [
@@ -68,8 +68,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "headline": post.title,
-              "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
+              "headline": post.seoTitle || post.title,
+              "description": post.seoDescription || `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
               "image": post.imageUrl,
               "author": {
                 "@type": "Person",
@@ -122,47 +122,53 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
             <div className="mb-10 text-lg leading-relaxed text-gray-600 space-y-6 font-cairo">
                   <div className="prose prose-lg max-w-none text-gray-700 font-medium leading-loose space-y-6">
-                    <p className="text-xl font-bold text-brand-secondary mb-6 leading-relaxed">
-                      هل تبحث عن <strong className="text-brand-primary">أفضل 5G والألياف البصرية</strong> الشاملة؟ أنت في المكان الصحيح! نوفر لك من خلال صفحة <strong className="text-black">{post.title}</strong> أحدث وأقوى <strong className="text-brand-primary">عروض زين للإنترنت المنزلي اللامحدود</strong>. استمتع بتجربة إنترنت تفوق الخيال مع <strong className="text-black">تأسيس مجاني</strong> بالكامل والحصول على <strong className="text-brand-primary">راوتر زين 5G أو فايبر مجاناً</strong> بمجرد اشتراكك.
-                    </p>
+                    {post.content ? (
+                      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                    ) : (
+                      <>
+                        <p className="text-xl font-bold text-brand-secondary mb-6 leading-relaxed">
+                          هل تبحث عن <strong className="text-brand-primary">أفضل 5G والألياف البصرية</strong> الشاملة؟ أنت في المكان الصحيح! نوفر لك من خلال صفحة <strong className="text-black">{post.title}</strong> أحدث وأقوى <strong className="text-brand-primary">عروض زين للإنترنت المنزلي اللامحدود</strong>. استمتع بتجربة إنترنت تفوق الخيال مع <strong className="text-black">تأسيس مجاني</strong> بالكامل والحصول على <strong className="text-brand-primary">راوتر زين 5G أو فايبر مجاناً</strong> بمجرد اشتراكك.
+                        </p>
 
-                    <h2 id="discover" className="text-3xl font-black text-brand-secondary mt-12 mb-6 border-r-[5px] border-brand-primary pr-5 bg-gray-50 py-3 rounded-l-xl shadow-sm">
-                      تفاصيل عروض زين فايبر و 5G المتاحة
-                    </h2>
-                    
-                    <p>
-                      تقدم <strong className="text-brand-primary">شركة زين السعودية</strong> مجموعة من الباقات المتطورة المصممة خصيصاً لتلبي احتياجات كل بيت. سواء كنت مهتماً باشتراك <strong className="text-black">باقة زين 5G المنزلية</strong> التي لا تتطلب أي حفريات أو تمديدات، أو كنت تفضل <strong className="text-black">الألياف البصرية (فايبر)</strong> من أجل استقرار البينج (Ping) في الألعاب التنافسية (Gaming)، لدينا الحل الأمثل لك وبأسعار تنافسية تبدأ من <strong className="text-brand-primary">289 ريال</strong>. 
-                      للمزيد حول الباقات، تفضل بزيارة مقال <Link href="/blog/4" className="text-brand-secondary font-bold hover:underline">أسعار 5G زين 2026</Link>.
-                    </p>
+                        <h2 id="discover" className="text-3xl font-black text-brand-secondary mt-12 mb-6 border-r-[5px] border-brand-primary pr-5 bg-gray-50 py-3 rounded-l-xl shadow-sm">
+                          تفاصيل عروض زين فايبر و 5G المتاحة
+                        </h2>
+                        
+                        <p>
+                          تقدم <strong className="text-brand-primary">شركة زين السعودية</strong> مجموعة من الباقات المتطورة المصممة خصيصاً لتلبي احتياجات كل بيت. سواء كنت مهتماً باشتراك <strong className="text-black">باقة زين 5G المنزلية</strong> التي لا تتطلب أي حفريات أو تمديدات، أو كنت تفضل <strong className="text-black">الألياف البصرية (فايبر)</strong> من أجل استقرار البينج (Ping) في الألعاب التنافسية (Gaming)، لدينا الحل الأمثل لك وبأسعار تنافسية تبدأ من <strong className="text-brand-primary">289 ريال</strong>. 
+                          للمزيد حول الباقات، تفضل بزيارة مقال <Link href="/blog/4" className="text-brand-secondary font-bold hover:underline">أسعار 5G زين 2026</Link>.
+                        </p>
 
-                    <div className="grid md:grid-cols-2 gap-8 my-10">
-                       <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-primary hover:shadow-lg transition-all">
-                          <h3 className="font-black text-brand-secondary mb-4 text-2xl flex items-center gap-3"><span className="text-3xl">🚀</span> باقات 5G المنزلية</h3>
-                          <ul className="space-y-3 text-gray-600 font-semibold marker:text-brand-primary list-disc list-inside">
-                            <li>سرعات تحميل ورفع هائلة دون انقطاع.</li>
-                            <li><strong className="text-black">تأسيس فوري</strong> وراوتر مجاني يُسلم في نفس اليوم.</li>
-                            <li>تغطية شاملة وقوية بفضل أبراج زين الحديثة.</li>
-                            <li>مثالية للمشاهدة بدقة 4K والبث المباشر.</li>
-                          </ul>
-                       </div>
-                       
-                       <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-sm border border-blue-100 hover:border-blue-500 hover:shadow-lg transition-all">
-                          <h3 className="font-black text-blue-900 mb-4 text-2xl flex items-center gap-3"><span className="text-3xl">⚡</span> شبكات الألياف البصرية</h3>
-                          <ul className="space-y-3 text-gray-600 font-semibold marker:text-blue-500 list-disc list-inside">
-                            <li>سرعات خيالية تصل إلى <strong className="text-black">1000 ميجابت (1 جيجا)</strong>.</li>
-                            <li>بينج (Ping) منخفض جداً لعشاق الألعاب.</li>
-                            <li>تمديد وبوكسات فايبر بـ <strong className="text-black">مجاناً بالكامل</strong>.</li>
-                            <li>استقرار وثبات في أسوأ الظروف الجوية.</li>
-                          </ul>
-                       </div>
-                    </div>
+                        <div className="grid md:grid-cols-2 gap-8 my-10">
+                           <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-primary hover:shadow-lg transition-all">
+                              <h3 className="font-black text-brand-secondary mb-4 text-2xl flex items-center gap-3"><span className="text-3xl">🚀</span> باقات 5G المنزلية</h3>
+                              <ul className="space-y-3 text-gray-600 font-semibold marker:text-brand-primary list-disc list-inside">
+                                <li>سرعات تحميل ورفع هائلة دون انقطاع.</li>
+                                <li><strong className="text-black">تأسيس فوري</strong> وراوتر مجاني يُسلم في نفس اليوم.</li>
+                                <li>تغطية شاملة وقوية بفضل أبراج زين الحديثة.</li>
+                                <li>مثالية للمشاهدة بدقة 4K والبث المباشر.</li>
+                              </ul>
+                           </div>
+                           
+                           <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-sm border border-blue-100 hover:border-blue-500 hover:shadow-lg transition-all">
+                              <h3 className="font-black text-blue-900 mb-4 text-2xl flex items-center gap-3"><span className="text-3xl">⚡</span> شبكات الألياف البصرية</h3>
+                              <ul className="space-y-3 text-gray-600 font-semibold marker:text-blue-500 list-disc list-inside">
+                                <li>سرعات خيالية تصل إلى <strong className="text-black">1000 ميجابت (1 جيجا)</strong>.</li>
+                                <li>بينج (Ping) منخفض جداً لعشاق الألعاب.</li>
+                                <li>تمديد وبوكسات فايبر بـ <strong className="text-black">مجاناً بالكامل</strong>.</li>
+                                <li>استقرار وثبات في أسوأ الظروف الجوية.</li>
+                              </ul>
+                           </div>
+                        </div>
 
-                    <h3 id="order" className="text-2xl font-black text-brand-secondary mt-12 mb-4 border-r-[4px] border-brand-light pr-4">
-                      كيفية الاشتراك والتأسيس؟
-                    </h3>
-                    <p>
-                      الأمر بسيط جداً! كل ما عليك فعله هو طلب الخدمة من خلال <strong className="text-black">مندوب مبيعات زين</strong> المعتمد. سيقوم فريقنا بالتحقق من التغطية في منطقتك، ثم إرسال <strong className="text-brand-primary">موظف أو فني تركيب زين</strong> لتوصيل الراوتر أو تمديد خطوط الألياف البصرية مجاناً. لا توجد رسوم خفية، والمودم يأتي ضمن الباقة.
-                    </p>
+                        <h3 id="order" className="text-2xl font-black text-brand-secondary mt-12 mb-4 border-r-[4px] border-brand-light pr-4">
+                          كيفية الاشتراك والتأسيس؟
+                        </h3>
+                        <p>
+                          الأمر بسيط جداً! كل ما عليك فعله هو طلب الخدمة من خلال <strong className="text-black">مندوب مبيعات زين</strong> المعتمد. سيقوم فريقنا بالتحقق من التغطية في منطقتك، ثم إرسال <strong className="text-brand-primary">موظف أو فني تركيب زين</strong> لتوصيل الراوتر أو تمديد خطوط الألياف البصرية مجاناً. لا توجد رسوم خفية، والمودم يأتي ضمن الباقة.
+                        </p>
+                      </>
+                    )}
 
                     {/* SEO Keywords Highlighted naturally */}
                     <div className="bg-brand-gray p-6 rounded-xl text-sm text-gray-500 mt-8 mb-10 leading-relaxed border border-gray-200">
