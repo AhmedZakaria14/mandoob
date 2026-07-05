@@ -17,11 +17,29 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://www.xn-----ctdcm0aqck5plajre8a.com/"
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       
       <main className="flex-grow">
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
         {/* Schema.org for Local Business / Service */}
         <script
           type="application/ld+json"

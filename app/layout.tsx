@@ -89,6 +89,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             })(window,document,'script','dataLayer','GTM-TF6WR9DF');
           `}
         </Script>
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PJXCF87RQQ" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PJXCF87RQQ');
+          `}
+        </Script>
       </head>
       <body className="bg-brand-gray text-[#444] font-sans antialiased" suppressHydrationWarning>
         {children}

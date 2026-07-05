@@ -67,6 +67,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "الرئيسية",
+                  "item": "https://www.xn-----ctdcm0aqck5plajre8a.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "المدونة",
+                  "item": "https://www.xn-----ctdcm0aqck5plajre8a.com/#blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": post.title,
+                  "item": `https://www.xn-----ctdcm0aqck5plajre8a.com/blog/${id}`
+                }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.seoTitle || post.title,
               "description": post.seoDescription || `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
