@@ -20,15 +20,33 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return { title: 'الصفحة غير موجودة' };
   }
 
+  const rawTitle = post.seoTitle || post.title;
+  // Make sure title doesn't exceed ~60 chars to avoid SEO warnings
+  let finalTitle = rawTitle;
+  if (finalTitle.length > 60) {
+    // try to split by ' – ' or '-'
+    if (finalTitle.includes(' – ')) {
+      finalTitle = finalTitle.split(' – ')[0];
+    } else if (finalTitle.includes(' - ')) {
+      finalTitle = finalTitle.split(' - ')[0];
+    } else {
+      finalTitle = finalTitle.substring(0, 57) + '...';
+    }
+  }
+
+  const canonicalUrl = `https://www.xn-----ctdcm0aqck5plajre8a.com/blog/${id}`;
+
   return {
-    title: post.seoTitle || `${post.title} | دليل عروض وباقات زين السعودية`,
+    title: {
+      absolute: finalTitle
+    },
     description: post.seoDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
     keywords: post.keywords || [post.title, post.title.split(' ').join(', '), 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'الرياض'],
     openGraph: {
-      title: post.seoTitle || `${post.title} | عروض 5G وألياف زين`,
+      title: finalTitle,
       description: post.seoDescription || `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
       type: 'article',
-      url: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
+      url: canonicalUrl,
       images: [
         {
           url: post.imageUrl,
@@ -39,7 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       ],
     },
     alternates: {
-      canonical: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
+      canonical: canonicalUrl,
     }
   };
 }
@@ -52,7 +70,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     notFound();
   }
 
-  const postUrl = process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `https://example.com/blog/${id}`;
+  const postUrl = `https://www.xn-----ctdcm0aqck5plajre8a.com/blog/${id}`;
   const isFiber = post.title.includes('ألياف') || post.title.includes('فايبر');
   const is5G = post.title.includes('5G');
 

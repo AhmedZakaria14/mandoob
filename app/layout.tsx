@@ -11,7 +11,7 @@ const cairo = Cairo({
 });
 
 // The base APP_URL can be used for canonical links
-const baseUrl = process.env.APP_URL || 'https://xn-----ctdcm0aqck5plajre8a.com';
+const baseUrl = 'https://www.xn-----ctdcm0aqck5plajre8a.com';
 
 export const metadata: Metadata = {
   title: {
