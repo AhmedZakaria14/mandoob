@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'تأسيس وتركيب إنترنت زين | عروض 5G والألياف البصرية',
   description: 'احصل على أفضل خدمات وعروض زين لإنترنت 5G والألياف البصرية. تأسيس سريع، مودم مجاني، وباقات مميزة لتغطية شاملة في كافة أحياء الرياض والمملكة. اتصل بمندوب زين.',
   alternates: {
-    canonical: process.env.APP_URL ? `${process.env.APP_URL}/` : '/',
+    canonical: 'https://www.xn-----ctdcm0aqck5plajre8a.com/',
   }
 };
 
