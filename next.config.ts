@@ -8,6 +8,20 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  async redirects() {
+    return [
+      { source: '/blog/9', destination: '/', permanent: true },
+      { source: '/blog/12', destination: '/', permanent: true },
+      { source: '/blog/13', destination: '/', permanent: true },
+      { source: '/blog/15', destination: '/', permanent: true },
+      { source: '/blog/17', destination: '/', permanent: true },
+      { source: '/blog/18', destination: '/', permanent: true },
+      { source: '/blog/22', destination: '/', permanent: true },
+      { source: '/blog/23', destination: '/', permanent: true },
+      { source: '/blog/25', destination: '/', permanent: true },
+      { source: '/blog/26', destination: '/', permanent: true },
+    ];
+  },
   // Allow access to remote image placeholder.
   images: {
     remotePatterns: [
