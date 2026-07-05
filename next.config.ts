@@ -9,28 +9,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   async redirects() {
-    return [
-      { source: '/blog/8', destination: '/', permanent: true },
-      { source: '/blog/9', destination: '/', permanent: true },
-      { source: '/blog/10', destination: '/', permanent: true },
-      { source: '/blog/11', destination: '/', permanent: true },
-      { source: '/blog/12', destination: '/', permanent: true },
-      { source: '/blog/13', destination: '/', permanent: true },
-      { source: '/blog/14', destination: '/', permanent: true },
-      { source: '/blog/15', destination: '/', permanent: true },
-      { source: '/blog/16', destination: '/', permanent: true },
-      { source: '/blog/17', destination: '/', permanent: true },
-      { source: '/blog/18', destination: '/', permanent: true },
-      { source: '/blog/19', destination: '/', permanent: true },
-      { source: '/blog/20', destination: '/', permanent: true },
-      { source: '/blog/21', destination: '/', permanent: true },
-      { source: '/blog/22', destination: '/', permanent: true },
-      { source: '/blog/23', destination: '/', permanent: true },
-      { source: '/blog/24', destination: '/', permanent: true },
-      { source: '/blog/25', destination: '/', permanent: true },
-      { source: '/blog/26', destination: '/', permanent: true },
-      { source: '/blog/27', destination: '/', permanent: true },
-    ];
+    return [];
   },
   // Allow access to remote image placeholder.
   images: {
