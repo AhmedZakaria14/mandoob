@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import Image from 'next/image';
 
 const homeImages = [
   { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png", alt: "مندوب شركة زين الرياض لتركيب وتأسيس 5G والألياف" },
@@ -28,16 +29,24 @@ export function Slideshow() {
   return (
     <div className="relative w-full min-h-[300px] md:min-h-[500px] flex items-center justify-center bg-gray-50/50 rounded-2xl shadow-md border border-gray-100 overflow-hidden">
       <AnimatePresence mode="wait">
-        <motion.img
+        <motion.div
           key={currentIndex}
-          src={homeImages[currentIndex].src}
-          alt={homeImages[currentIndex].alt}
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full h-auto object-cover max-h-[600px]"
-        />
+          className="w-full"
+        >
+          <Image
+            src={homeImages[currentIndex].src}
+            alt={homeImages[currentIndex].alt}
+            width={800}
+            height={600}
+            className="w-full h-auto object-cover max-h-[600px]"
+            priority={currentIndex === 0}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </motion.div>
       </AnimatePresence>
       
       {/* Pagination indicators */}

@@ -58,6 +58,7 @@ export function Header() {
               width={200}
               height={100}
               className={`h-16 md:h-24 w-auto object-contain drop-shadow-md py-1`} 
+              priority
               loading="eager" 
             />
           </Link>

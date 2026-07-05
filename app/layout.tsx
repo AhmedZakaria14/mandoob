@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#6366f1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <Script id="gtm-script" strategy="afterInteractive">
+        <Script id="gtm-script" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -90,8 +90,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
         {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PJXCF87RQQ" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PJXCF87RQQ" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
