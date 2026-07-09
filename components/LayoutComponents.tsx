@@ -7,16 +7,11 @@ import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const displayPhone = "0596620358";
+  const whatsappPhone = "966596620358";
 
-  const isSalam = pathname === '/salam';
-  const displayPhone = isSalam ? "0508348048" : "0596620358";
-  const whatsappPhone = isSalam ? "966508348048" : "966596620358";
-
-  const logoSrc = isSalam 
-    ? "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879636/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B3%D9%84%D8%A7%D9%85_%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84_%D9%84%D9%88%D8%AC%D9%88_korawo.png"
-    : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
-  const logoAlt = isSalam ? "شعار سلام موبايل" : "شعار زين 5G وألياف بصرية";
+  const logoSrc = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
+  const logoAlt = "شعار زين 5G وألياف بصرية";
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -67,7 +62,6 @@ export function Header() {
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
              <Link href="/#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</Link>
              <Link href="/#blog" className="font-bold hover:text-brand-primary transition text-lg">المدونة</Link>
-             <Link href="/salam" className="font-bold hover:text-brand-primary transition text-lg text-green-600">سلام فايبر و 5G</Link>
              <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
           </div>
         </div>
@@ -110,9 +104,6 @@ export function Header() {
               </Link>
               <Link href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 المدونة
-              </Link>
-              <Link href="/salam" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3 text-green-500">
-                عروض سلام فايبر و 5G
               </Link>
               <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 عروض موضفين الرياض
@@ -167,10 +158,9 @@ export function Header() {
 }
 
 export function Footer() {
-  const pathname = usePathname();
-  const isSalam = pathname === '/salam';
-  const displayPhone = isSalam ? "0508348048" : "0596620358";
-  const whatsappPhone = isSalam ? "966508348048" : "966596620358";
+  
+  const displayPhone = "0596620358";
+  const whatsappPhone = "966596620358";
 
   return (
     <footer className="bg-brand-primary text-white pt-16">
@@ -197,7 +187,6 @@ export function Footer() {
             <li><Link href="/" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الرئيسية</Link></li>
             <li><Link href="/#services" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0"><span>›</span> الخدمات</Link></li>
             <li><Link href="/#blog" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold"><span>›</span> المدونة</Link></li>
-            <li><Link href="/salam" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 font-bold text-green-500"><span>›</span> سلام فايبر و 5G </Link></li>
             <li><Link href="/blog/5" className="hover:text-brand-secondary transition flex items-center gap-2 justify-center md:justify-start py-1 md:py-0 text-brand-light"><span>›</span> عروض التأسيس الحصرية</Link></li>
           </ul>
         </div>
