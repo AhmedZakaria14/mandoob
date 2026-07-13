@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     google: 'ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc',
   },
   icons: {
-    icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png',
-    shortcut: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png',
-    apple: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png',
+    icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
+    shortcut: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
+    apple: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
   },
   robots: {
     index: true,
