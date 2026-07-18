@@ -3,6 +3,7 @@ import { packages } from '@/data/packages';
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { Slideshow } from '@/components/Slideshow';
+import { BookingForm } from '@/components/BookingForm';
 import { FAQSection } from '@/components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -77,20 +78,21 @@ export default function Home() {
           }}
         />
 
-        {/* Hero Section with Slideshow */}
+        {/* Hero Section with Slideshow and Booking Form */}
         <section className="bg-brand-gray pt-10 pb-20 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2 text-center md:text-right space-y-6">
+          <div className="container mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div className="lg:col-span-7 text-center lg:text-right space-y-6 flex flex-col justify-center">
               <h1 className="text-4xl md:text-[58px] font-bold text-[#444] mb-6 leading-tight">
                 إنترنت <span className="text-brand-primary font-black">زين 5G</span> المنزلي
               </h1>
-              <p className="text-lg md:text-2xl text-gray-500 mb-10 leading-relaxed font-sans">
+              <p className="text-lg md:text-2xl text-gray-500 mb-8 leading-relaxed font-sans">
                 أفضل عروض 5G والألياف البصرية المتطورة مع تأسيس وتركيب مجاني في كافة أحياء المملكة عبر مندوبنا المعتمد.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                 <a 
-                  href="https://wa.me/966596620358" 
+                  href="https://wa.me/966596620358?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-brand-primary hover:bg-[#85ad1b] text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center gap-2 transition shadow-[0_10px_20px_rgba(149,193,31,0.3)] w-full sm:w-auto"
@@ -104,14 +106,22 @@ export default function Home() {
                   <span dir="ltr">0596620358</span>
                 </a>
               </div>
+              
+              <div className="hidden lg:block mt-12 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                <Slideshow />
+              </div>
             </div>
             
-            <div className="md:w-1/2 w-full mt-10 md:mt-0">
-               <Slideshow />
+            <div className="lg:col-span-5 w-full mt-10 lg:mt-0 relative">
+              <BookingForm />
             </div>
+
+            <div className="lg:hidden col-span-1 mt-10 w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+              <Slideshow />
+            </div>
+
           </div>
         </section>
-
         {/* Services Section (.icon-box Style) */}
         <section id="services" className="py-20 bg-white">
           <div className="container mx-auto px-4">
@@ -220,7 +230,7 @@ export default function Home() {
                     ))}
                   </ul>
                   
-                  <a href="https://wa.me/966596620358" target="_blank" rel="noopener noreferrer" className={`inline-block px-8 py-4 rounded-full font-bold transition-all shadow-sm w-full ${pkg.isPopular ? 'bg-brand-primary text-white hover:bg-brand-secondary' : 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-white'}`}>
+                  <a href={`https://wa.me/966596620358?text=${encodeURIComponent('السلام عليكم، أريد الاشتراك في باقة ' + pkg.title)}`} target="_blank" rel="noopener noreferrer" className={`inline-block px-8 py-4 rounded-full font-bold transition-all shadow-sm w-full ${pkg.isPopular ? 'bg-brand-primary text-white hover:bg-brand-secondary' : 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-white'}`}>
                     أطلب الآن
                   </a>
                   <p className="text-[10px] text-gray-400 mt-4 leading-tight">{pkg.terms_and_conditions}</p>

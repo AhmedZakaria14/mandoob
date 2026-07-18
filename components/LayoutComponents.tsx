@@ -112,7 +112,7 @@ export function Header() {
 
             <div className="mt-auto pt-6 border-t border-gray-700">
                <a 
-                 href={`https://wa.me/${whatsappPhone}`} 
+                 href={`https://wa.me/${whatsappPhone}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="bg-[#18d26e] hover:bg-[#15b960] w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition text-white shadow-lg border-2 border-white"
@@ -141,7 +141,7 @@ export function Header() {
 
         {/* Floating WhatsApp Button */}
         <a 
-          href={`https://wa.me/${whatsappPhone}`} 
+          href={`https://wa.me/${whatsappPhone}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-14 h-14 bg-[#18d26e] rounded-full shadow-[0_3px_6px_rgba(0,0,0,0.3)] flex items-center justify-center text-white md:hover:scale-110 transition-transform duration-300 group relative"
@@ -169,7 +169,7 @@ export function Footer() {
           <h4 className="text-2xl font-bold text-brand-primary mb-6">احصل على استشارة لتغطية حيك</h4>
           <div className="bg-white p-2 rounded-full shadow-md flex">
             <input type="text" placeholder="اكتب موقعك للتحقق من التغطية..." className="flex-1 px-4 outline-none rounded-r-full" />
-            <a href={`https://wa.me/${whatsappPhone}`} target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</a>
+            <a href={`https://wa.me/${whatsappPhone}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white hover:bg-brand-light transition px-6 py-3 rounded-full font-bold shadow-md">تحقق الآن</a>
           </div>
         </div>
       </div>
@@ -221,7 +221,7 @@ export function Footer() {
             </div>
 
             <div className="flex gap-3">
-              <a href={`https://wa.me/${whatsappPhone}`} className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary hover:border-brand-primary transition-all duration-300">
+              <a href={`https://wa.me/${whatsappPhone}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-primary hover:border-brand-primary transition-all duration-300">
                 <MessageCircle size={20} />
               </a>
             </div>
