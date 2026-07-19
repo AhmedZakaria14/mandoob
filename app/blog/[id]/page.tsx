@@ -239,6 +239,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     <ul className="space-y-3">
                       {blogPosts
                         .filter(p => p.id !== post.id)
+                        .slice(0, 5)
                         .map(relatedPost => (
                           <li key={relatedPost.id} className="flex items-center gap-2">
                             <span className="text-brand-primary">«</span>
