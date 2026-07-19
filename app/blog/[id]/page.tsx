@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                         
                         <p>
                           تقدم <strong className="text-brand-primary">شركة زين السعودية</strong> مجموعة من الباقات المتطورة المصممة خصيصاً لتلبي احتياجات كل بيت. سواء كنت مهتماً باشتراك <strong className="text-black">باقة زين 5G المنزلية</strong> التي لا تتطلب أي حفريات أو تمديدات، أو كنت تفضل <strong className="text-black">الألياف البصرية (فايبر)</strong> من أجل استقرار البينج (Ping) في الألعاب التنافسية (Gaming)، لدينا الحل الأمثل لك وبأسعار تنافسية تبدأ من <strong className="text-brand-primary">289 ريال</strong>. 
-                          للمزيد حول الباقات، تفضل بزيارة مقال <Link href="/blog/4" className="text-brand-secondary font-bold hover:underline">أسعار 5G زين 2026</Link>.
+                          للمزيد حول الباقات، تفضل بزيارة مقال <Link href="/blog/4" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-bold hover:underline">أسعار 5G زين 2026</Link>.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-8 my-10">
@@ -238,11 +238,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     </h3>
                     <ul className="space-y-3">
                       {blogPosts
-                        .filter(p => [4, 5, 27].includes(p.id))
+                        .filter(p => p.id !== post.id)
                         .map(relatedPost => (
                           <li key={relatedPost.id} className="flex items-center gap-2">
                             <span className="text-brand-primary">«</span>
-                            <Link href={`/blog/${relatedPost.slug}`} className="text-[#444] font-medium hover:text-brand-primary hover:underline transition-colors">
+                            <Link href={`/blog/${relatedPost.slug}`} target="_blank" rel="noopener noreferrer" className="text-[#444] font-medium hover:text-brand-primary hover:underline transition-colors">
                               دليلك الشامل حول {relatedPost.title}
                             </Link>
                           </li>

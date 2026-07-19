@@ -290,7 +290,7 @@ export default function Home() {
               {blogPosts.map((post) => (
                 <div key={post.id} className="w-full h-full">
                   <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full md:hover:shadow-xl transition-shadow duration-300">
-                    <Link href={`/blog/${post.slug}`} className="block relative">
+                    <Link href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="block relative">
                       <div className="relative h-[220px] w-full overflow-hidden bg-gray-100">
                         <Image 
                           src={post.imageUrl}
@@ -314,7 +314,7 @@ export default function Home() {
                         تعرف على أحدث عروض وباقات الإنترنت المنزلي من شركة زين، شاملة تفاصيل التأسيس المجاني والراوتر بدون رسوم، والتغطية الشاملة للجيل الخامس 5G والألياف البصرية.
                       </p>
                       <div className="text-left mt-auto border-t border-gray-100 pt-4">
-                        <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-brand-primary font-bold hover:text-brand-secondary transition-colors text-sm">
+                        <Link href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-brand-primary font-bold hover:text-brand-secondary transition-colors text-sm">
                           اقرأ المزيد <span className="mr-1 text-lg leading-none">←</span>
                         </Link>
                       </div>
