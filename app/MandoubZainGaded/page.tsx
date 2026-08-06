@@ -2,6 +2,7 @@ import React from 'react';
 import { packages } from '@/data/packages';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { Slideshow } from '@/components/Slideshow';
+import { homeImages } from '@/data/images';
 import { BookingForm } from '@/components/BookingForm';
 import { FAQSection } from '@/components/FAQ';
 import Image from 'next/image';
@@ -38,7 +39,7 @@ export default function MandoubZainGaded() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header phoneNumber="0575010603" />
       
       <main className="flex-grow">
         {/* Breadcrumb Schema */}
@@ -113,16 +114,16 @@ export default function MandoubZainGaded() {
               </div>
               
               <div className="hidden lg:block mt-12 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                <Slideshow />
+                <Slideshow images={homeImages.filter(img => !img.src.includes('nppqfj.png'))} />
               </div>
             </div>
             
             <div className="lg:col-span-5 w-full mt-10 lg:mt-0 relative">
-              <BookingForm phoneNumber="966575010603" />
+              <BookingForm phoneNumber="0575010603" />
             </div>
 
             <div className="lg:hidden col-span-1 mt-10 w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-              <Slideshow />
+              <Slideshow images={homeImages.filter(img => !img.src.includes('nppqfj.png'))} />
             </div>
 
           </div>
@@ -305,11 +306,11 @@ export default function MandoubZainGaded() {
         </section>
 
         {/* FAQ Section */}
-        <FAQSection />
+        <FAQSection phoneNumber="0575010603" />
 
       </main>
       
-      <Footer />
+      <Footer phoneNumber="0575010603" />
     </div>
   );
 }

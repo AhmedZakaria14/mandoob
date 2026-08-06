@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
-export function Header() {
+export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const displayPhone = "0596620358";
-  const whatsappPhone = "966596620358";
+  const displayPhone = phoneNumber;
+  const whatsappPhone = phoneNumber.startsWith('0') ? '966' + phoneNumber.substring(1) : phoneNumber;
 
   const logoSrc = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
   const logoAlt = "شعار زين 5G وألياف بصرية";
@@ -157,10 +157,10 @@ export function Header() {
   );
 }
 
-export function Footer() {
+export function Footer({ phoneNumber = "0596620358" }: { phoneNumber?: string }) {
   
-  const displayPhone = "0596620358";
-  const whatsappPhone = "966596620358";
+  const displayPhone = phoneNumber;
+  const whatsappPhone = phoneNumber.startsWith('0') ? '966' + phoneNumber.substring(1) : phoneNumber;
 
   return (
     <footer className="bg-brand-primary text-white pt-16">

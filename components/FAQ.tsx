@@ -29,8 +29,13 @@ const faqs: FAQItem[] = [
   }
 ];
 
-export function FAQSection() {
+export function FAQSection({ phoneNumber = "0596620358" }: { phoneNumber?: string }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const dynamicFaqs = faqs.map(faq => ({
+    ...faq,
+    answer: faq.answer.replace(/0596620358/g, phoneNumber)
+  }));
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -47,7 +52,7 @@ export function FAQSection() {
         <p className="text-center text-gray-500 mb-12">كل ما تحتاج معرفته عن خدمات وتركيب إنترنت زين</p>
         
         <div className="space-y-4 shadow-sm bg-white p-6 rounded-xl border border-gray-100">
-          {faqs.map((faq, index) => (
+          {dynamicFaqs.map((faq, index) => (
             <div 
               key={index} 
               className={`border-b border-gray-100 overflow-hidden transition-all duration-300 last:border-b-0`}
@@ -80,7 +85,7 @@ export function FAQSection() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": faqs.map(faq => ({
+            "mainEntity": dynamicFaqs.map(faq => ({
               "@type": "Question",
               "name": faq.question,
               "acceptedAnswer": {
