@@ -3,7 +3,11 @@
 import React, { useState } from 'react';
 import { Send, MapPin, Smartphone, User, Wifi } from 'lucide-react';
 
-export function BookingForm() {
+interface BookingFormProps {
+  phoneNumber?: string;
+}
+
+export function BookingForm({ phoneNumber = "966596620358" }: BookingFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -24,7 +28,7 @@ export function BookingForm() {
 الحي/المدينة: ${formData.location}
 جايكم من إعلان سناب شات.`;
     
-    const whatsappUrl = `https://wa.me/966596620358?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 
