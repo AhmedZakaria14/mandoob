@@ -10,3 +10,6 @@ export const homeImages = [
   { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_1_luo5ux.jpg", alt: "مندوب زين الفني لتركيب الألياف البصرية بالموقع بأسرع وقت" },
   { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279050/5_l2sdhh.png", alt: "موظف مبيعات زين لخدمات الإنترنت المنزلي ورفع طلبات التأسيس فوراً" }
 ];
+
+export const gadedImages = homeImages.filter(img => !img.src.includes('nppqfj'));
+

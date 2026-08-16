@@ -1,23 +1,43 @@
 import React from 'react';
 import { packages } from '@/data/packages';
+import { gadedImages } from '@/data/images';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { Slideshow } from '@/components/Slideshow';
-import { homeImages } from '@/data/images';
 import { BookingForm } from '@/components/BookingForm';
 import { FAQSection } from '@/components/FAQ';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'تأسيس وتركيب إنترنت زين 5G والألياف البصرية | اتصل 0575010603',
-  description: 'احصل على أفضل عروض زين لإنترنت 5G والألياف البصرية مع المندوب المعتمد (0575010603). تأسيس مجاني وراوتر مجاني وباقات مفتوحة بأسرع وقت. اتصل الآن.',
+  title: 'مندوب زين المعتمد | 0575010603 تأسيس وتركيب إنترنت 5G وفايبر',
+  description: 'تواصل مع مندوب زين المعتمد 0575010603 للحصول على أفضل عروض إنترنت 5G والألياف البصرية فايبر بالرياض وكافة مدن المملكة. راوتر وتأسيس مجاني وسرعة تفعيل في نفس اليوم.',
+  keywords: [
+    'مندوب زين 0575010603',
+    'رقم مندوب زين 0575010603',
+    'مندوب شركة زين 0575010603',
+    'مندوب مبيعات زين 0575010603',
+    'تأسيس زين 5G 0575010603',
+    'تركيب الياف بصرية زين 0575010603',
+    'راوتر زين 5G مجاني',
+    'عروض زين فايبر'
+  ],
   alternates: {
     canonical: 'https://www.xn-----ctdcm0aqck5plajre8a.com/MandoubZainGaded',
   },
-  keywords: 'مندوب زين, تركيب انترنت زين, زين 5G, ألياف بصرية زين, رقم مندوب زين 0575010603, عروض زين انترنت, تأسيس نت زين'
+  openGraph: {
+    title: 'مندوب زين المعتمد | 0575010603 تأسيس وتركيب إنترنت 5G وفايبر',
+    description: 'تواصل مع مندوب زين المعتمد 0575010603 لطلب باقات 5G والألياف البصرية مع راوتر وتأسيس مجاني بالرياض والمملكة.',
+    url: 'https://www.xn-----ctdcm0aqck5plajre8a.com/MandoubZainGaded',
+    siteName: 'مندوب شركة زين المعتمد',
+    locale: 'ar_SA',
+    type: 'website',
+  }
 };
 
-export default function MandoubZainGaded() {
+export default function MandoubZainGadedPage() {
+  const phoneNumber = "0575010603";
+  const whatsappNumber = "966575010603";
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -31,15 +51,46 @@ export default function MandoubZainGaded() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "مندوب زين الجديد 0575010603",
+        "name": "مندوب زين 0575010603",
         "item": "https://www.xn-----ctdcm0aqck5plajre8a.com/MandoubZainGaded"
       }
     ]
   };
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "تأسيس وتركيب إنترنت زين 5G وألياف بصرية فايبر",
+    "name": "مندوب مبيعات زين المعتمد 0575010603",
+    "provider": {
+      "@type": "Organization",
+      "name": "مندوب مبيعات زين 0575010603",
+      "telephone": "+966575010603",
+      "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png"
+    },
+    "areaServed": "المملكة العربية السعودية",
+    "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء المملكة بأفضل العروض عبر مندوب زين 0575010603.",
+    "url": "https://www.xn-----ctdcm0aqck5plajre8a.com/MandoubZainGaded",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "باقات زين المتاحة 0575010603",
+      "itemListElement": packages.map((pkg) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": pkg.title,
+          "description": pkg.subtitle
+        },
+        "price": pkg.price,
+        "priceCurrency": "SAR",
+        "url": "https://www.xn-----ctdcm0aqck5plajre8a.com/MandoubZainGaded"
+      }))
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
-      <Header phoneNumber="0575010603" />
+      <Header phoneNumber={phoneNumber} />
       
       <main className="flex-grow">
         {/* Breadcrumb Schema */}
@@ -50,55 +101,24 @@ export default function MandoubZainGaded() {
         {/* Schema.org for Local Business / Service */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "serviceType": "تأسيس وتركيب إنترنت 5G وألياف بصرية",
-              "name": "مبيعات زين 5G وألياف",
-              "provider": {
-                "@type": "Organization",
-                "name": "مبيعات زين 5G وألياف - المندوب 0575010603",
-                "telephone": "+966575010603",
-                "image": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png`
-              },
-              "areaServed": "المملكة العربية السعودية",
-              "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع عبر المندوب 0575010603.",
-              "url": process.env.APP_URL ? `${process.env.APP_URL}/MandoubZainGaded` : 'https://example.com/MandoubZainGaded',
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "باقات زين المتاحة",
-                "itemListElement": packages.map((pkg, idx) => ({
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": pkg.title,
-                    "description": pkg.subtitle
-                  },
-                  "price": pkg.price,
-                  "priceCurrency": "SAR",
-                  "url": process.env.APP_URL ? `${process.env.APP_URL}/MandoubZainGaded` : 'https://example.com/MandoubZainGaded'
-                }))
-              }
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
         />
 
-        {/* Hero Section with Slideshow and Booking Form */}
+        {/* Hero Section with Slideshow (without 58 image) and Booking Form */}
         <section className="bg-brand-gray pt-10 pb-20 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 text-center lg:text-right space-y-6 flex flex-col justify-center">
-              <h1 className="text-4xl md:text-[58px] font-bold text-[#444] mb-6 leading-tight">
-                إنترنت <span className="text-brand-primary font-black">زين 5G</span> المنزلي
+              <h1 className="text-4xl md:text-[54px] font-bold text-[#444] mb-6 leading-tight">
+                إنترنت <span className="text-brand-primary font-black">زين 5G</span> المنزلي | <span className="text-brand-secondary font-black" dir="ltr">{phoneNumber}</span>
               </h1>
               <p className="text-lg md:text-2xl text-gray-500 mb-8 leading-relaxed font-sans">
-                أفضل عروض 5G والألياف البصرية المتطورة مع تأسيس وتركيب مجاني في كافة أحياء المملكة عبر مندوبنا المعتمد.
+                أفضل عروض 5G والألياف البصرية المتطورة مع تأسيس وتركيب مجاني في كافة أحياء المملكة عبر مندوبنا المعتمد <strong className="text-brand-primary" dir="ltr">{phoneNumber}</strong>.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                 <a 
-                  href="https://wa.me/966575010603?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86" 
+                  href={`https://wa.me/${whatsappNumber}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-brand-primary hover:bg-[#85ad1b] text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center gap-2 transition shadow-[0_10px_20px_rgba(149,193,31,0.3)] w-full sm:w-auto"
@@ -106,30 +126,30 @@ export default function MandoubZainGaded() {
                   <span>طلب عبر الواتساب</span>
                 </a>
                 <a 
-                  href="tel:0575010603" 
+                  href={`tel:${phoneNumber}`} 
                   className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center justify-center transition shadow-sm bg-white/50 backdrop-blur-sm w-full sm:w-auto"
                 >
-                  <span dir="ltr">0575010603</span>
+                  <span dir="ltr">{phoneNumber}</span>
                 </a>
               </div>
               
               <div className="hidden lg:block mt-12 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                <Slideshow images={homeImages.filter(img => !img.src.includes('nppqfj.png'))} />
+                <Slideshow images={gadedImages} />
               </div>
             </div>
             
             <div className="lg:col-span-5 w-full mt-10 lg:mt-0 relative">
-              <BookingForm phoneNumber="0575010603" />
+              <BookingForm phoneNumber={whatsappNumber} />
             </div>
 
             <div className="lg:hidden col-span-1 mt-10 w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-              <Slideshow images={homeImages.filter(img => !img.src.includes('nppqfj.png'))} />
+              <Slideshow images={gadedImages} />
             </div>
 
           </div>
         </section>
-        
-        {/* Services Section (.icon-box Style) */}
+
+        {/* Services Section */}
         <section id="services" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center pb-12">
@@ -147,7 +167,7 @@ export default function MandoubZainGaded() {
                   إنترنت 5G منزلي
                 </h3>
                 <p className="text-gray-500 leading-relaxed">
-                  احصل على راوتر الجيل الخامس 5G لسرعات إنترنت غير مسبوقة. تغطية ممتازة لجميع أرجاء المنزل ومناسبة للألعاب والبث بدقة 4K بدون تقطيع.
+                  احصل على راوتر الجيل الخامس 5G لسرعات إنترنت غير مسبوقة. تغطية ممتازة لجميع أرجاء المنزل ومناسبة للألعاب والبث بدقة 4K بدون تقطيع عبر الاتصال بـ <span className="font-bold text-brand-primary" dir="ltr">{phoneNumber}</span>.
                 </p>
               </div>
               
@@ -157,14 +177,14 @@ export default function MandoubZainGaded() {
                    ألياف بصرية (فايبر)
                  </h3>
                  <p className="text-gray-500 leading-relaxed">
-                   استقرار تام وسرعات مطابقة مع باقات الألياف البصرية. الخيار الأمثل للمنازل الذكية والعائلات ذات الاستهلاك العالي.
+                   استقرار تام وسرعات مطابقة مع باقات الألياف البصرية. الخيار الأمثل للمنازل الذكية والعائلات ذات الاستهلاك العالي مع راوتر وتأسيس مجاني.
                  </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing equivalent section (.priceBox Style) */}
+        {/* Pricing section */}
         <section className="py-20 bg-brand-gray border-t border-b border-gray-200">
           <div className="container mx-auto px-4">
             <div className="text-center pb-12">
@@ -237,7 +257,12 @@ export default function MandoubZainGaded() {
                     ))}
                   </ul>
                   
-                  <a href={`https://wa.me/966575010603?text=${encodeURIComponent('السلام عليكم، أريد الاشتراك في باقة ' + pkg.title)}`} target="_blank" rel="noopener noreferrer" className={`inline-block px-8 py-4 rounded-full font-bold transition-all shadow-sm w-full ${pkg.isPopular ? 'bg-brand-primary text-white hover:bg-brand-secondary' : 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-white'}`}>
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('السلام عليكم، أريد الاشتراك في باقة ' + pkg.title)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`inline-block px-8 py-4 rounded-full font-bold transition-all shadow-sm w-full ${pkg.isPopular ? 'bg-brand-primary text-white hover:bg-brand-secondary' : 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-white'}`}
+                  >
                     أطلب الآن
                   </a>
                   <p className="text-[10px] text-gray-400 mt-4 leading-tight">{pkg.terms_and_conditions}</p>
@@ -255,7 +280,7 @@ export default function MandoubZainGaded() {
                 معرض أعمالنا في التركيبات والتأسيس
                 <span className="block w-1/2 h-1 bg-brand-primary mx-auto mt-2"></span>
               </h2>
-              <p className="text-gray-500 text-lg">جانب من أعمال تركيب بوكسات الألياف البصرية وتأسيس شبكات زين فايبر بأعلى معايير الجودة.</p>
+              <p className="text-gray-500 text-lg">جانب من أعمال تركيب بوكسات الألياف البصرية وتأسيس شبكات زين فايبر بأعلى معايير الجودة عبر مندوب زين <span className="font-bold text-brand-primary" dir="ltr">{phoneNumber}</span>.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -281,36 +306,55 @@ export default function MandoubZainGaded() {
           </div>
         </section>
 
-        {/* Keyword-Rich SEO Content */}
+        {/* SEO Rich Content Section (Without Blog Grid) */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
-              <h3 className="text-2xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                <span className="text-brand-primary">✦</span> الدليل الشامل لخدمات زين 5G والألياف البصرية عبر المندوب 0575010603
-              </h3>
+              <h2 className="text-2xl md:text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
+                <span className="text-brand-primary">✦</span> مندوب شركة زين المعتمد لتركيب وتأسيس 5G وفايبر | <span dir="ltr">{phoneNumber}</span>
+              </h2>
               
               <div className="prose prose-lg text-gray-600 font-medium leading-loose space-y-6">
                 <p>
-                  يُعد البحث عن <strong className="text-brand-primary">أفضل إنترنت منزلي</strong> خطوة حاسمة للتمتع بتجربة تصفح سلسة، وهنا تبرز <strong className="text-brand-secondary">عروض زين 5G</strong> وخدمات <strong className="text-brand-secondary">زين فايبر (الألياف البصرية)</strong> كأفضل الحلول في السوق السعودي. نوفر لك <strong className="text-[#333]">تأسيس وتركيب إنترنت 5G مجاني</strong> بالكامل مع <strong className="text-brand-primary">راوتر مجاني</strong> عند الاشتراك في إحدى <strong className="text-[#333]">باقات زين المفتوحة واللامحدودة</strong> من خلال الاتصال على الرقم <strong className="text-brand-primary" dir="ltr">0575010603</strong>.
+                  يُعد البحث عن <strong className="text-brand-primary">أفضل إنترنت منزلي</strong> خطوة حاسمة للتمتع بتجربة تصفح سلسة، وهنا تبرز <strong className="text-brand-secondary">عروض زين 5G</strong> وخدمات <strong className="text-brand-secondary">زين فايber (الألياف البصرية)</strong> كأفضل الحلول في السوق السعودي. نوفر لك <strong className="text-[#333]">تأسيس وتركيب إنترنت 5G مجاني</strong> بالكامل مع <strong className="text-brand-primary">راوتر مجاني</strong> عند الاشتراك عبر مندوب زين المعتمد على الرقم <a href={`tel:${phoneNumber}`} className="text-brand-primary font-bold hover:underline" dir="ltr">{phoneNumber}</a>.
                 </p>
                 <p>
-                  من خلال التواصل المباشر مع <strong className="text-brand-secondary">مندوب مبيعات زين 0575010603</strong> أو <strong className="text-[#333]">موظف زين المعتمد</strong>، يمكنك طلب <strong className="text-brand-primary">تأسيس الألياف البصرية</strong> لمنزلك بأعلى معايير الجودة المتمثلة في سرعات تصل إلى <strong className="text-brand-secondary">1000 ميجابت (1 جيجا)</strong> والتي توفر تجربة خيالية في الألعاب (Gaming) والبث بدقة 4K بدون أي انقطاع. نحن نوفر <strong className="text-[#333]">تركيب بوكسات ألياف بصرية</strong> و <strong className="text-brand-primary">تمديد كابلات فايبر</strong> في أسرع وقت بواسطة فريق <strong className="text-[#333]">مندوب زين الفني</strong> المتميز.
+                  من خلال التواصل المباشر مع <strong className="text-brand-secondary">مندوب مبيعات زين {phoneNumber}</strong>، يمكنك طلب <strong className="text-brand-primary">تأسيس الألياف البصرية</strong> لمنزلك بأعلى معايير الجودة وبسرعات تصل إلى <strong className="text-brand-secondary">1000 ميجابت (1 جيجا)</strong> والتي توفر تجربة ممتازة في الألعاب (Gaming) والبث بدقة 4K بدون أي انقطاع. نحن نوفر <strong className="text-[#333]">تركيب بوكسات ألياف بصرية</strong> و <strong className="text-brand-primary">تمديد كابلات فايبر</strong> في أسرع وقت بواسطة فريق <strong className="text-[#333]">مندوب زين الفني</strong> المتميز.
                 </p>
                 <p>
-                  سواء كنت تتواجد في الرياض، جدة، الدمام، أو أي مدينة أخرى تتطلع إلى <strong className="text-[#333]">اشتراك زين فايبر</strong>، فإننا نغطي أفضل الأحياء والمناطق لضمان استقرار الشبكة. 
-                  تشمل كلمات البحث الشائعة للوصول لخدماتنا: <strong className="text-gray-400 font-normal">مندوب زين 0575010603، الإنترنت المنزلي من زين، نت مفتوح وسرعة لامحدودة، باقة زين 5G المفتوحة ٢٩٩، اشتراك شاهد مجاني ومقوي شبكة، تغطية الألياف البصرية، ارقام مناديب زين، فني تركيب راوتر زين، تفعيل زين 5G المنزلية، باقة 300 ميجابت بلس، باقة 500 بريميوم، أرخص نت منزلي لامحدود، تأسيس خط فايبر، رقم موظف زين للنت</strong>.
+                  سواء كنت تتواجد في الرياض، جدة، مكة، الدمام، أو أي مدينة أخرى تتطلع إلى <strong className="text-[#333]">اشتراك زين فايبر أو 5G</strong>، فإننا نغطي أفضل الأحياء والمناطق لضمان استقرار الشبكة وجودة الإشارة.
                 </p>
+                <p className="text-sm text-gray-500">
+                  تشمل كلمات البحث الشائعة للوصول لخدماتنا: <strong className="text-gray-500 font-normal">مندوب زين 0575010603، رقم مندوب زين، عروض زين 5G الرياض، راوتر زين مجاني، باقة زين اللامحدودة، تأسيس خط فايبر، تركيب بوكسية زين، ارقام مناديب زين، اشتراك نت زين منزلي، فني زين للإنترنت</strong>.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a 
+                  href={`https://wa.me/${whatsappNumber}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#18d26e] hover:bg-[#15b960] text-white px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 transition shadow-lg w-full sm:w-auto"
+                >
+                  <span>تواصل واتساب مع المندوب ({phoneNumber})</span>
+                </a>
+                <a 
+                  href={`tel:${phoneNumber}`} 
+                  className="bg-brand-secondary hover:bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 transition shadow-lg w-full sm:w-auto"
+                >
+                  <span>اتصال مباشر: <span dir="ltr">{phoneNumber}</span></span>
+                </a>
               </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <FAQSection phoneNumber="0575010603" />
+        <FAQSection />
 
       </main>
       
-      <Footer phoneNumber="0575010603" />
+      <Footer phoneNumber={phoneNumber} />
     </div>
   );
 }
