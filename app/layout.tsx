@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     description: 'أفضل عروض الإنترنت المنزلي 5G والألياف البصرية من زين السعودية. تأسيس مجاني وتركيب سريع.',
     images: [
       {
-        url: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png',
-        width: 1200,
-        height: 630,
+        url: '/images/zain-riyadh-nppqfj.webp',
+        width: 1080,
+        height: 600,
         alt: 'عروض انترنت زين 5G والألياف البصرية',
       },
     ],
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'عروض 5G وألياف بصرية - انترنت زين المنزلي',
     description: 'أفضل عروض الإنترنت المنزلي 5G والألياف البصرية من زين السعودية. تأسيس سريع.',
-    images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279049/1_s3knrl.png'],
+    images: ['/images/zain-riyadh-nppqfj.webp'],
   },
   verification: {
     google: 'ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc',
   },
   icons: {
-    icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
-    shortcut: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
-    apple: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777280053/fav_ecujni.png',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
   robots: {
     index: true,

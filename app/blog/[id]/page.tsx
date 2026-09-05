@@ -50,8 +50,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       images: [
         {
           url: post.imageUrl,
-          width: 1200,
-          height: 630,
+          width: 1080,
+          height: 600,
           alt: post.title,
         },
       ],
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               "@type": "BlogPosting",
               "headline": post.seoTitle || post.title,
               "description": post.seoDescription || `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
-              "image": post.imageUrl,
+              "image": new URL(post.imageUrl, postUrl).href,
               "author": {
                 "@type": "Person",
                 "name": "موظف مبيعات زين"
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين 5G وألياف بصرية",
                 "logo": {
                    "@type": "ImageObject",
-                   "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png`
+                   "url": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo.webp`
                 }
               },
               "datePublished": new Date().toISOString().split('T')[0],

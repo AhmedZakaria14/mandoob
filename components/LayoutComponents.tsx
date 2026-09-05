@@ -10,7 +10,7 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
   const displayPhone = phoneNumber;
   const whatsappPhone = phoneNumber.startsWith('0') ? '966' + phoneNumber.substring(1) : phoneNumber;
 
-  const logoSrc = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png";
+  const logoSrc = "/images/zain-logo.webp";
   const logoAlt = "شعار زين 5G وألياف بصرية";
 
   useEffect(() => {

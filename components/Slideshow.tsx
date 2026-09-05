@@ -16,7 +16,7 @@ export function Slideshow({ images = homeImages }: { images?: typeof homeImages 
   }, [images.length]);
 
   return (
-    <div className="relative w-full min-h-[300px] md:min-h-[500px] flex items-center justify-center bg-gray-50/50 rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+    <div className="relative w-full h-[420px] md:h-[600px] flex items-center justify-center bg-gray-50/50 rounded-2xl shadow-md border border-gray-100 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -24,14 +24,13 @@ export function Slideshow({ images = homeImages }: { images?: typeof homeImages 
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full"
+          className="relative w-full h-full"
         >
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            width={800}
-            height={600}
-            className="w-full h-auto object-cover max-h-[600px]"
+            fill
+            className="object-contain pb-14"
             priority={currentIndex === 0}
             sizes="(max-width: 768px) 100vw, 50vw"
           />

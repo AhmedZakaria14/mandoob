@@ -54,7 +54,7 @@ export default function Home() {
                 "@type": "Organization",
                 "name": "مبيعات زين 5G وألياف",
                 "telephone": "+966596620358",
-                "image": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279051/logo_qeuexm.png`
+                "image": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo.webp`
               },
               "areaServed": "المملكة العربية السعودية",
               "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",
@@ -251,19 +251,19 @@ export default function Home() {
               <p className="text-gray-500 text-lg">جانب من أعمال تركيب بوكسات الألياف البصرية وتأسيس شبكات زين فايبر بأعلى معايير الجودة.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {[
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/zain_fiber_rdqmd6.jpg", alt: "تركيب بوكسات ألياف بصرية لشركة زين فايبر" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461698/WhatsApp_Image_2026-04-28_at_2.57.08_PM_z4ytos.jpg", alt: "تأسيس وإنشاء شبكات الألياف البصرية وزين فايبر" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_2_ztdosg.jpg", alt: "تمديد كابلات وتجهيز بوكسات الألياف البصرية زين" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_1_luo5ux.jpg", alt: "مندوب وموظف تركيب الألياف البصرية فايبر من زين" }
+                { src: "/images/fiber-installations.webp", alt: "تأسيس وإنشاء شبكات الألياف البصرية وزين فايبر" },
+                { src: "/images/fiber-boxes.webp", alt: "تمديد كابلات وتجهيز بوكسات الألياف البصرية زين" },
+                { src: "/images/fiber-identification.webp", alt: "مندوب وموظف تركيب الألياف البصرية فايبر من زين" }
               ].map((img, idx) => (
                 <div key={idx} className="relative h-[250px] md:h-[300px] w-full rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
                   <Image 
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white font-bold text-sm leading-tight drop-shadow-md">{img.alt}</p>
