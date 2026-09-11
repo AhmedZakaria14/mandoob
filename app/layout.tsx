@@ -16,7 +16,7 @@ const baseUrl = 'https://www.xn-----ctdcm0aqck5plajre8a.com';
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#6366f1',
+  themeColor: '#7fbb01',
 };
 
 export const metadata: Metadata = {
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     google: 'ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc',
   },
   icons: {
-    icon: '/favicon.png',
+    icon: [{ url: '/favicon.png', type: 'image/png', sizes: '192x192' }],
     shortcut: '/favicon.png',
-    apple: '/apple-touch-icon.png',
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
   },
   robots: {
     index: true,

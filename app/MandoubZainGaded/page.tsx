@@ -66,7 +66,7 @@ export default function MandoubZainGadedPage() {
       "@type": "Organization",
       "name": "مندوب مبيعات زين 0575010603",
       "telephone": "+966575010603",
-      "image": "https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo.webp"
+      "image": "https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo-green.webp"
     },
     "areaServed": "المملكة العربية السعودية",
     "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء المملكة بأفضل العروض عبر مندوب زين 0575010603.",

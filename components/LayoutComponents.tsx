@@ -10,7 +10,7 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
   const displayPhone = phoneNumber;
   const whatsappPhone = phoneNumber.startsWith('0') ? '966' + phoneNumber.substring(1) : phoneNumber;
 
-  const logoSrc = "/images/zain-logo.webp";
+  const logoSrc = "/images/zain-logo-green.webp";
   const logoAlt = "شعار زين 5G وألياف بصرية";
 
   useEffect(() => {
@@ -27,13 +27,13 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
 
   return (
     <>
-      <header className="bg-brand-secondary text-white py-3 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.5)] sticky top-0 z-50 transition-all duration-300">
+      <header className="bg-brand-header text-brand-dark py-3 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.5)] sticky top-0 z-50 transition-all duration-300">
         <div className="container mx-auto px-4 h-16 flex justify-between items-center relative">
           
           {/* Mobile Menu Toggle (Right side in RTL) */}
           <button 
             onClick={() => setIsMobileMenuOpen(true)} 
-            className="md:hidden text-white hover:text-brand-primary transition z-10"
+            className="md:hidden text-brand-dark hover:text-black transition z-10"
             aria-label="افتح القائمة"
           >
             <Menu size={32} />
@@ -41,8 +41,8 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
 
           {/* Desktop Left Side Links (Right side in LTR flow, Left side in RTL flow) */}
           <div className="hidden md:flex gap-6 z-10 flex-1">
-            <Link href="/" className="font-bold hover:text-brand-primary transition text-lg">الرئيسية</Link>
-            <Link href="/#services" className="font-bold hover:text-brand-primary transition text-lg">الخدمات</Link>
+            <Link href="/" className="font-bold hover:text-black transition text-lg">الرئيسية</Link>
+            <Link href="/#services" className="font-bold hover:text-black transition text-lg">الخدمات</Link>
           </div>
 
           {/* Centered Logo */}
@@ -50,9 +50,9 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
             <Image 
               src={logoSrc} 
               alt={logoAlt} 
-              width={200}
-              height={100}
-              className={`h-16 md:h-24 w-auto object-contain drop-shadow-md py-1`} 
+              width={606}
+              height={662}
+              className="h-16 w-auto object-contain"
               priority
               loading="eager" 
             />
@@ -60,9 +60,9 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
           
           {/* Desktop Right Side Links */}
           <div className="hidden md:flex gap-6 z-10 flex-1 justify-end">
-             <Link href="/#gallery" className="font-bold hover:text-brand-primary transition text-lg">أعمال التركيب</Link>
-             <Link href="/#blog" className="font-bold hover:text-brand-primary transition text-lg">المدونة</Link>
-             <Link href="/blog/5" className="font-bold hover:text-brand-primary transition text-lg text-brand-primary">عروض التأسيس</Link>
+             <Link href="/#gallery" className="font-bold hover:text-black transition text-lg">أعمال التركيب</Link>
+             <Link href="/#blog" className="font-bold hover:text-black transition text-lg">المدونة</Link>
+             <Link href="/blog/5" className="font-bold hover:text-black transition text-lg underline underline-offset-4">عروض التأسيس</Link>
           </div>
         </div>
       </header>
@@ -71,51 +71,51 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden" onClick={() => setIsMobileMenuOpen(false)}>
           <div 
-            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-brand-secondary shadow-2xl p-6 flex flex-col border-l border-brand-primary transition-transform duration-300"
+            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-brand-header shadow-2xl p-6 flex flex-col border-l border-black/15 transition-transform duration-300"
             onClick={(e) => e.stopPropagation()}
             dir="rtl"
           >
-            <div className="flex justify-between items-center mb-10 border-b border-gray-700 pb-4">
+            <div className="flex justify-between items-center mb-10 border-b border-black/15 pb-4">
               <Image 
                 src={logoSrc} 
                 alt={logoAlt} 
-                width={120}
-                height={60}
+                width={606}
+                height={662}
                 className={`h-12 w-auto object-contain`} 
               />
               <button 
                 onClick={() => setIsMobileMenuOpen(false)} 
-                className="text-gray-400 hover:text-white transition bg-gray-800 p-2 rounded-full"
+                className="text-white hover:text-white transition bg-gray-800 p-2 rounded-full"
                 aria-label="إغلاق القائمة"
               >
                 <X size={24} />
               </button>
             </div>
             
-            <nav className="flex flex-col gap-2 text-lg font-bold text-white">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+            <nav className="flex flex-col gap-2 text-lg font-bold text-brand-dark">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الرئيسية
               </Link>
-              <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 الخدمات
               </Link>
-              <Link href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <Link href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 أعمال التركيب
               </Link>
-              <Link href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <Link href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 المدونة
               </Link>
-              <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
+              <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black hover:bg-white/5 rounded-lg p-3 transition flex items-center gap-3">
                 عروض موضفين الرياض
               </Link>
             </nav>
 
-            <div className="mt-auto pt-6 border-t border-gray-700">
+            <div className="mt-auto pt-6 border-t border-black/15">
                <a 
                  href={`https://wa.me/${whatsappPhone}?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B2%D9%8A%D9%86`} 
                  target="_blank" 
                  rel="noopener noreferrer" 
-                 className="bg-[#18d26e] hover:bg-[#15b960] w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition text-white shadow-lg border-2 border-white"
+                 className="bg-[#18d26e] hover:bg-[#15b960] w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition text-brand-dark shadow-lg border-2 border-white"
                >
                  <MessageCircle size={20} />
                  <span>تواصل واتساب</span>
