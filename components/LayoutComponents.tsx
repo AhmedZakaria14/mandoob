@@ -46,7 +46,7 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
           </div>
 
           {/* Centered Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-xl border-2 border-white p-1.5 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             <Image 
               src={logoSrc} 
               alt={logoAlt} 
