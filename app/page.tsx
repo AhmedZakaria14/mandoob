@@ -54,7 +54,7 @@ export default function Home() {
                 "@type": "Organization",
                 "name": "مبيعات زين 5G وألياف",
                 "telephone": "+966596620358",
-                "image": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo.webp`
+                "image": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo-green.webp`
               },
               "areaServed": "المملكة العربية السعودية",
               "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",

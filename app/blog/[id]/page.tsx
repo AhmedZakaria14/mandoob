@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين 5G وألياف بصرية",
                 "logo": {
                    "@type": "ImageObject",
-                   "url": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo.webp`
+                   "url": `https://www.xn-----ctdcm0aqck5plajre8a.com/images/zain-logo-green.webp`
                 }
               },
               "datePublished": new Date().toISOString().split('T')[0],
