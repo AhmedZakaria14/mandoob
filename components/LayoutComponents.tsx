@@ -27,6 +27,14 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
 
   return (
     <>
+      {/* Remove the green background from the white header mark without redrawing it. */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="header-logo-transparent" colorInterpolationFilters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 1.15 0 -0.15" />
+          </filter>
+        </defs>
+      </svg>
       <header className="bg-brand-header text-brand-dark py-3 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.5)] sticky top-0 z-50 transition-all duration-300">
         <div className="container mx-auto px-4 h-16 flex justify-between items-center relative">
           
@@ -46,13 +54,14 @@ export function Header({ phoneNumber = "0596620358" }: { phoneNumber?: string })
           </div>
 
           {/* Centered Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-xl border-2 border-white p-1.5 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             <Image 
               src={logoSrc} 
               alt={logoAlt} 
               width={606}
               height={662}
               className="h-16 w-auto object-contain"
+              style={{ filter: 'url(#header-logo-transparent)', clipPath: 'inset(0 1px 2px 0)' }}
               priority
               loading="eager" 
             />
